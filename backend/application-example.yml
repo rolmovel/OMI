@@ -1,0 +1,120 @@
+spring:
+  profiles:
+    active: docker
+
+  # Database Configuration
+  datasource:
+    url: jdbc:postgresql://postgres:5432/${DB_NAME:auth_db}
+    username: ${DB_USERNAME:omi}
+    password: ${DB_PASSWORD:omi_password}
+    driver-class-name: org.postgresql.Driver
+
+  # JPA Configuration
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+        jdbc:
+          lob:
+            non_contextual_creation: true
+
+  # Redis Configuration
+  redis:
+    host: ${REDIS_HOST:redis}
+    port: ${REDIS_PORT:6379}
+    timeout: 2000ms
+    lettuce:
+      pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 0
+
+  # Eureka Client Configuration
+  cloud:
+    config:
+      enabled: false
+    discovery:
+      client:
+        simple:
+          instances:
+            service-discovery:
+              - uri: http://service-discovery:8761/eureka/
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://service-discovery:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+
+# Management and Monitoring
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  endpoint:
+    health:
+      show-details: when-authorized
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+
+# Logging Configuration
+logging:
+  level:
+    com.omi: DEBUG
+    org.springframework.web: DEBUG
+    org.springframework.cloud: DEBUG
+  pattern:
+    console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
+
+# Application Configuration
+app:
+  jwt:
+    secret: ${JWT_SECRET:mySecretKeyForJWTTokenGenerationThatIsAtLeast256BitsLong!!!}
+    expiration: 900000  # 15 minutes in milliseconds
+    refresh-expiration: 604800000  # 7 days in milliseconds
+
+  cors:
+    allowed-origins:
+      - http://localhost:3000
+      - http://localhost:5173
+      - tauri://localhost
+      - https://omi-health.com
+      - https://app.omi-health.com
+
+  security:
+    bcrypt:
+      rounds: 12
+
+  file:
+    upload:
+      max-size: 10MB
+      allowed-types: image/jpeg,image/png,image/gif,application/pdf
+
+  pagination:
+    default-size: 20
+    max-size: 100
+
+# Resilience4j Circuit Breaker
+resilience4j:
+  circuitbreaker:
+    instances:
+      default:
+        failure-rate-threshold: 50
+        wait-duration-in-open-state: 10000
+        sliding-window-size: 10
+        minimum-number-of-calls: 5
+
+# Cache Configuration
+cache:
+  ttl:
+    user-permissions: 300  # 5 minutes
+    patient-summary: 3600  # 1 hour
+    carnet-digital: 3600   # 1 hour
