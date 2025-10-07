@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitar Cita - OMI Familias</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        * { font-family: 'Inter', system-ui, sans-serif; }
+        .time-slot { transition: all 0.2s; cursor: pointer; }
+        .time-slot:hover { background: #F0F9FF; border-color: #06B6D4; transform: scale(1.02); }
+        .time-slot.selected { background: linear-gradient(135deg, #06B6D4 0%, #3B82F6 100%); color: white; border-color: #06B6D4; }
+        .nav-btn { transition: all 0.2s; }
+        .nav-btn.active { color: #06B6D4; border-top: 3px solid #06B6D4; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
+            <button onclick="window.location.href='home.html'" class="text-gray-600 hover:text-gray-900">
+                <i class="fas fa-arrow-left text-xl"></i>
+            </button>
+            <h1 class="text-xl font-bold text-gray-900">Solicitar Cita</h1>
+            <div class="w-10"></div>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-8 pb-24">
+        <div class="mb-6">
+            <h2 class="text-2xl font-bold text-gray-900 mb-2">Nueva Cita</h2>
+            <p class="text-gray-600">Selecciona fecha y hora para la cita de Carlos</p>
+        </div>
+
+        <!-- Patient Selection -->
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-200 mb-6">
+            <h3 class="text-lg font-bold text-gray-900 mb-4">Para:</h3>
+            <div class="flex items-center p-4 bg-blue-50 rounded-xl border-2 border-blue-200">
+                <div class="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-xl flex items-center justify-center text-white text-2xl font-bold mr-4">
+                    CR
+                </div>
+                <div>
+                    <p class="font-bold text-gray-900 text-lg">Carlos Rodríguez</p>
+                    <p class="text-gray-600">5 años • Plan Preventivo</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Appointment Type -->
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-200 mb-6">
+            <h3 class="text-lg font-bold text-gray-900 mb-4">Tipo de Cita</h3>
+            <div class="space-y-3">
+                <label class="flex items-center p-4 border-2 border-cyan-500 bg-cyan-50 rounded-xl cursor-pointer">
+                    <input type="radio" name="type" checked class="w-5 h-5 text-cyan-600">
+                    <div class="ml-4">
+                        <p class="font-bold text-gray-900">Revisión Programada</p>
+                        <p class="text-sm text-gray-600">Revisión preventiva del plan de salud</p>
+                    </div>
+                </label>
+                <label class="flex items-center p-4 border-2 border-gray-200 rounded-xl cursor-pointer hover:border-cyan-300">
+                    <input type="radio" name="type" class="w-5 h-5 text-cyan-600">
+                    <div class="ml-4">
+                        <p class="font-bold text-gray-900">Consulta Urgente</p>
+                        <p class="text-sm text-gray-600">Dolor o problema que requiere atención</p>
+                    </div>
+                </label>
+                <label class="flex items-center p-4 border-2 border-gray-200 rounded-xl cursor-pointer hover:border-cyan-300">
+                    <input type="radio" name="type" class="w-5 h-5 text-cyan-600">
+                    <div class="ml-4">
+                        <p class="font-bold text-gray-900">Seguimiento</p>
+                        <p class="text-sm text-gray-600">Seguimiento de tratamiento previo</p>
+                    </div>
+                </label>
+            </div>
+        </div>
+
+        <!-- Date Selection -->
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-200 mb-6">
+            <h3 class="text-lg font-bold text-gray-900 mb-4">Selecciona Fecha</h3>
+            
+            <div class="flex items-center justify-between mb-4">
+                <button class="p-2 hover:bg-gray-100 rounded-lg">
+                    <i class="fas fa-chevron-left text-gray-600"></i>
+                </button>
+                <p class="font-bold text-gray-900">Enero 2024</p>
+                <button class="p-2 hover:bg-gray-100 rounded-lg">
+                    <i class="fas fa-chevron-right text-gray-600"></i>
+                </button>
+            </div>
+
+            <div class="grid grid-cols-7 gap-2">
+                <div class="text-center text-xs text-gray-500 font-semibold py-2">L</div>
+                <div class="text-center text-xs text-gray-500 font-semibold py-2">M</div>
+                <div class="text-center text-xs text-gray-500 font-semibold py-2">X</div>
+                <div class="text-center text-xs text-gray-500 font-semibold py-2">J</div>
+                <div class="text-center text-xs text-gray-500 font-semibold py-2">V</div>
+                <div class="text-center text-xs text-gray-500 font-semibold py-2">S</div>
+                <div class="text-center text-xs text-gray-500 font-semibold py-2">D</div>
+
+                <button class="aspect-square flex items-center justify-center rounded-lg text-gray-400 cursor-not-allowed">1</button>
+                <button class="aspect-square flex items-center justify-center rounded-lg text-gray-400 cursor-not-allowed">2</button>
+                <button class="aspect-square flex items-center justify-center rounded-lg text-gray-900 font-semibold hover:bg-cyan-50 border-2 border-transparent hover:border-cyan-300">3</button>
+                <button class="aspect-square flex items-center justify-center rounded-lg text-gray-900 font-semibold hover:bg-cyan-50 border-2 border-transparent hover:border-cyan-300">4</button>
+                <button class="aspect-square flex items-center justify-center rounded-lg text-gray-900 font-semibold hover:bg-cyan-50 border-2 border-transparent hover:border-cyan-300">5</button>
+                <button class="aspect-square flex items-center justify-center rounded-lg text-gray-400 cursor-not-allowed bg-gray-100">6</button>
+                <button class="aspect-square flex items-center justify-center rounded-lg text-gray-400 cursor-not-allowed bg-gray-100">7</button>
+                
+                <button class="aspect-square flex items-center justify-center rounded-lg text-gray-900 font-semibold hover:bg-cyan-50 border-2 border-transparent hover:border-cyan-300">8</button>
+                <button class="aspect-square flex items-center justify-center rounded-lg text-gray-900 font-semibold hover:bg-cyan-50 border-2 border-transparent hover:border-cyan-300">9</button>
+                <button class="aspect-square flex items-center justify-center rounded-lg text-gray-900 font-semibold hover:bg-cyan-50 border-2 border-transparent hover:border-cyan-300">10</button>
+                <button class="aspect-square flex items-center justify-center rounded-lg text-gray-900 font-semibold hover:bg-cyan-50 border-2 border-transparent hover:border-cyan-300">11</button>
+                <button class="aspect-square flex items-center justify-center rounded-lg text-gray-900 font-semibold hover:bg-cyan-50 border-2 border-transparent hover:border-cyan-300">12</button>
+                <button class="aspect-square flex items-center justify-center rounded-lg text-gray-400 cursor-not-allowed bg-gray-100">13</button>
+                <button class="aspect-square flex items-center justify-center rounded-lg text-gray-400 cursor-not-allowed bg-gray-100">14</button>
+
+                <button class="aspect-square flex items-center justify-center rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 text-white font-bold border-2 border-cyan-600">15</button>
+                <button class="aspect-square flex items-center justify-center rounded-lg text-gray-900 font-semibold hover:bg-cyan-50 border-2 border-transparent hover:border-cyan-300">16</button>
+                <button class="aspect-square flex items-center justify-center rounded-lg text-gray-900 font-semibold hover:bg-cyan-50 border-2 border-transparent hover:border-cyan-300">17</button>
+                <button class="aspect-square flex items-center justify-center rounded-lg text-gray-900 font-semibold hover:bg-cyan-50 border-2 border-transparent hover:border-cyan-300">18</button>
+                <button class="aspect-square flex items-center justify-center rounded-lg text-gray-900 font-semibold hover:bg-cyan-50 border-2 border-transparent hover:border-cyan-300">19</button>
+                <button class="aspect-square flex items-center justify-center rounded-lg text-gray-400 cursor-not-allowed bg-gray-100">20</button>
+                <button class="aspect-square flex items-center justify-center rounded-lg text-gray-400 cursor-not-allowed bg-gray-100">21</button>
+            </div>
+        </div>
+
+        <!-- Time Selection -->
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-200 mb-6">
+            <h3 class="text-lg font-bold text-gray-900 mb-4">Horarios Disponibles</h3>
+            <div class="grid grid-cols-2 gap-3">
+                <button class="time-slot p-4 border-2 border-gray-200 rounded-xl font-semibold text-gray-900">
+                    <i class="fas fa-clock text-cyan-600 mr-2"></i>09:00
+                </button>
+                <button class="time-slot p-4 border-2 border-gray-200 rounded-xl font-semibold text-gray-900">
+                    <i class="fas fa-clock text-cyan-600 mr-2"></i>09:30
+                </button>
+                <button class="time-slot selected p-4 border-2 rounded-xl font-semibold">
+                    <i class="fas fa-clock mr-2"></i>10:00
+                </button>
+                <button class="time-slot p-4 border-2 border-gray-200 rounded-xl font-semibold text-gray-900">
+                    <i class="fas fa-clock text-cyan-600 mr-2"></i>10:30
+                </button>
+                <button class="time-slot p-4 border-2 border-gray-200 rounded-xl font-semibold text-gray-900">
+                    <i class="fas fa-clock text-cyan-600 mr-2"></i>11:00
+                </button>
+                <button class="time-slot p-4 border-2 border-gray-200 rounded-xl font-semibold text-gray-900">
+                    <i class="fas fa-clock text-cyan-600 mr-2"></i>11:30
+                </button>
+            </div>
+        </div>
+
+        <!-- Notes -->
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-200 mb-6">
+            <h3 class="text-lg font-bold text-gray-900 mb-4">Observaciones (opcional)</h3>
+            <textarea 
+                class="w-full p-4 border-2 border-gray-200 rounded-xl focus:border-cyan-500 focus:outline-none resize-none"
+                rows="3"
+                placeholder="Escribe cualquier información adicional que consideres importante..."
+            ></textarea>
+        </div>
+
+        <!-- Confirm Button -->
+        <button class="w-full py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold text-lg rounded-xl hover:shadow-lg transition">
+            <i class="fas fa-check mr-2"></i>Confirmar Cita
+        </button>
+
+        <!-- Summary -->
+        <div class="mt-6 p-4 bg-blue-50 rounded-xl border border-blue-200">
+            <p class="text-sm text-blue-900 font-semibold mb-2">📋 Resumen de la cita:</p>
+            <p class="text-sm text-blue-800">
+                <strong>Paciente:</strong> Carlos Rodríguez<br>
+                <strong>Tipo:</strong> Revisión Programada<br>
+                <strong>Fecha:</strong> 15 de Enero 2024<br>
+                <strong>Hora:</strong> 10:00
+            </p>
+        </div>
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-lg">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="flex justify-around py-3">
+                <button onclick="window.location.href='home.html'" class="flex flex-col items-center py-2 px-4 text-gray-600">
+                    <i class="fas fa-home text-xl mb-1"></i>
+                    <span class="text-xs font-semibold">Inicio</span>
+                </button>
+                <button class="nav-btn active flex flex-col items-center py-2 px-4 text-gray-600">
+                    <i class="fas fa-calendar text-xl mb-1"></i>
+                    <span class="text-xs font-semibold">Citas</span>
+                </button>
+                <button onclick="window.location.href='informes.html'" class="flex flex-col items-center py-2 px-4 text-gray-600">
+                    <i class="fas fa-file-alt text-xl mb-1"></i>
+                    <span class="text-xs font-semibold">Informes</span>
+                </button>
+                <button onclick="window.location.href='recursos.html'" class="flex flex-col items-center py-2 px-4 text-gray-600">
+                    <i class="fas fa-book text-xl mb-1"></i>
+                    <span class="text-xs font-semibold">Recursos</span>
+                </button>
+                <button class="flex flex-col items-center py-2 px-4 text-gray-600">
+                    <i class="fas fa-user text-xl mb-1"></i>
+                    <span class="text-xs font-semibold">Perfil</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        document.querySelectorAll('.time-slot').forEach(slot => {
+            slot.addEventListener('click', function() {
+                document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('selected'));
+                this.classList.add('selected');
+            });
+        });
+    </script>
+</body>
+</html>

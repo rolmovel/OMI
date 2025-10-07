@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda - OMI Clínica</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        * { font-family: 'Inter', system-ui, sans-serif; }
+        .nav-item { transition: all 0.2s; }
+        .nav-item:hover:not(.active) { background: rgba(79, 70, 229, 0.08); }
+        .nav-item.active { background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%); color: white; }
+        .time-slot { transition: all 0.2s; cursor: pointer; }
+        .time-slot:hover { background: #F3F4F6; transform: scale(1.02); }
+        .time-slot.occupied { background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%); color: white; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-full mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+                <div class="w-10 h-10 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-lg flex items-center justify-center shadow-lg">
+                    <span class="text-2xl">🦷</span>
+                </div>
+                <span class="text-xl font-bold text-gray-900">OMI</span>
+            </div>
+            <div class="flex items-center space-x-6">
+                <span class="text-gray-700 font-medium hidden md:block">Dr. Juan Pérez</span>
+                <div class="flex items-center space-x-3">
+                    <button class="relative p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition">
+                        <i class="fas fa-bell text-xl"></i>
+                        <span class="absolute top-1 right-1 w-2.5 h-2.5 bg-red-500 rounded-full border-2 border-white"></span>
+                    </button>
+                    <button class="p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition">
+                        <i class="fas fa-cog text-xl"></i>
+                    </button>
+                    <button onclick="window.location.href='login.html'" class="p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition">
+                        <i class="fas fa-sign-out-alt text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="flex">
+        <aside class="w-64 bg-white border-r border-gray-200 min-h-screen sticky top-[73px] h-[calc(100vh-73px)]">
+            <nav class="p-4 space-y-2">
+                <a href="dashboard.html" class="nav-item flex items-center space-x-3 px-4 py-3 rounded-xl text-gray-700 font-medium">
+                    <i class="fas fa-home text-lg"></i><span>Dashboard</span>
+                </a>
+                <a href="pacientes.html" class="nav-item flex items-center space-x-3 px-4 py-3 rounded-xl text-gray-700 font-medium">
+                    <i class="fas fa-users text-lg"></i><span>Pacientes</span>
+                </a>
+                <a href="agenda.html" class="nav-item active flex items-center space-x-3 px-4 py-3 rounded-xl font-medium">
+                    <i class="fas fa-calendar-alt text-lg"></i><span>Agenda</span>
+                </a>
+                <a href="estadisticas.html" class="nav-item flex items-center space-x-3 px-4 py-3 rounded-xl text-gray-700 font-medium">
+                    <i class="fas fa-chart-bar text-lg"></i><span>Estadísticas</span>
+                </a>
+                <div class="pt-4 border-t border-gray-200 mt-4">
+                    <a href="../index.html" class="nav-item flex items-center space-x-3 px-4 py-3 rounded-xl text-gray-700 font-medium">
+                        <i class="fas fa-arrow-left text-lg"></i><span>Volver al inicio</span>
+                    </a>
+                </div>
+            </nav>
+        </aside>
+
+        <main class="flex-1 p-6 lg:p-8">
+            <div class="max-w-7xl mx-auto">
+                <div class="mb-8 flex items-center justify-between">
+                    <div>
+                        <h1 class="text-3xl font-bold text-gray-900 mb-2">Agenda de Citas</h1>
+                        <p class="text-gray-600">Gestión y planificación de citas</p>
+                    </div>
+                    <button class="px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold rounded-xl hover:shadow-lg transition">
+                        <i class="fas fa-plus mr-2"></i>Nueva Cita
+                    </button>
+                </div>
+
+                <!-- Calendar Navigation -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 mb-6">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="flex items-center space-x-4">
+                            <button class="p-2 hover:bg-gray-100 rounded-lg transition">
+                                <i class="fas fa-chevron-left text-gray-600"></i>
+                            </button>
+                            <h2 class="text-2xl font-bold text-gray-900">Lunes, 15 de Enero 2024</h2>
+                            <button class="p-2 hover:bg-gray-100 rounded-lg transition">
+                                <i class="fas fa-chevron-right text-gray-600"></i>
+                            </button>
+                        </div>
+                        <div class="flex space-x-2">
+                            <button class="px-4 py-2 bg-indigo-600 text-white rounded-lg font-semibold">Día</button>
+                            <button class="px-4 py-2 border-2 border-gray-300 text-gray-700 rounded-lg font-semibold hover:bg-gray-50 transition">Semana</button>
+                            <button class="px-4 py-2 border-2 border-gray-300 text-gray-700 rounded-lg font-semibold hover:bg-gray-50 transition">Mes</button>
+                        </div>
+                    </div>
+
+                    <!-- Mini Calendar Week -->
+                    <div class="grid grid-cols-7 gap-2 mb-6">
+                        <div class="text-center p-3 bg-gray-50 rounded-lg">
+                            <p class="text-xs text-gray-500 mb-1">LUN</p>
+                            <p class="text-lg font-bold text-gray-900">15</p>
+                        </div>
+                        <div class="text-center p-3 hover:bg-gray-50 rounded-lg cursor-pointer transition">
+                            <p class="text-xs text-gray-500 mb-1">MAR</p>
+                            <p class="text-lg font-semibold text-gray-700">16</p>
+                        </div>
+                        <div class="text-center p-3 hover:bg-gray-50 rounded-lg cursor-pointer transition">
+                            <p class="text-xs text-gray-500 mb-1">MIÉ</p>
+                            <p class="text-lg font-semibold text-gray-700">17</p>
+                        </div>
+                        <div class="text-center p-3 hover:bg-gray-50 rounded-lg cursor-pointer transition">
+                            <p class="text-xs text-gray-500 mb-1">JUE</p>
+                            <p class="text-lg font-semibold text-gray-700">18</p>
+                        </div>
+                        <div class="text-center p-3 hover:bg-gray-50 rounded-lg cursor-pointer transition">
+                            <p class="text-xs text-gray-500 mb-1">VIE</p>
+                            <p class="text-lg font-semibold text-gray-700">19</p>
+                        </div>
+                        <div class="text-center p-3 bg-gray-100 rounded-lg cursor-not-allowed">
+                            <p class="text-xs text-gray-400 mb-1">SÁB</p>
+                            <p class="text-lg font-semibold text-gray-400">20</p>
+                        </div>
+                        <div class="text-center p-3 bg-gray-100 rounded-lg cursor-not-allowed">
+                            <p class="text-xs text-gray-400 mb-1">DOM</p>
+                            <p class="text-lg font-semibold text-gray-400">21</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Time Slots -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+                    <h3 class="text-xl font-bold text-gray-900 mb-6">Horario del Día</h3>
+                    <div class="space-y-3">
+                        <!-- 09:00 - Occupied -->
+                        <div class="time-slot occupied p-5 rounded-xl border-2 border-indigo-300">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-4">
+                                    <div class="text-center">
+                                        <p class="text-lg font-bold">09:00</p>
+                                        <p class="text-xs opacity-80">30 min</p>
+                                    </div>
+                                    <div class="w-px h-12 bg-white/30"></div>
+                                    <div>
+                                        <p class="font-bold text-lg mb-1">Carlos Rodríguez (5 años)</p>
+                                        <p class="text-sm opacity-90">Revisión Preventiva</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="px-3 py-1 bg-white/20 backdrop-blur text-white text-xs font-semibold rounded-full">Confirmada</span>
+                                    <button class="px-4 py-2 bg-white/20 backdrop-blur hover:bg-white/30 rounded-lg transition">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 09:30 - Occupied -->
+                        <div class="time-slot occupied p-5 rounded-xl border-2 border-indigo-300">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-4">
+                                    <div class="text-center">
+                                        <p class="text-lg font-bold">09:30</p>
+                                        <p class="text-xs opacity-80">30 min</p>
+                                    </div>
+                                    <div class="w-px h-12 bg-white/30"></div>
+                                    <div>
+                                        <p class="font-bold text-lg mb-1">María García (8 años)</p>
+                                        <p class="text-sm opacity-90">Seguimiento HIM</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="px-3 py-1 bg-white/20 backdrop-blur text-white text-xs font-semibold rounded-full">Confirmada</span>
+                                    <button class="px-4 py-2 bg-white/20 backdrop-blur hover:bg-white/30 rounded-lg transition">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 10:00 - Occupied -->
+                        <div class="time-slot occupied p-5 rounded-xl border-2 border-indigo-300">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-4">
+                                    <div class="text-center">
+                                        <p class="text-lg font-bold">10:00</p>
+                                        <p class="text-xs opacity-80">45 min</p>
+                                    </div>
+                                    <div class="w-px h-12 bg-white/30"></div>
+                                    <div>
+                                        <p class="font-bold text-lg mb-1">Luis Martínez (6 años)</p>
+                                        <p class="text-sm opacity-90">Aplicación de Selladores</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="px-3 py-1 bg-white/20 backdrop-blur text-white text-xs font-semibold rounded-full">Confirmada</span>
+                                    <button class="px-4 py-2 bg-white/20 backdrop-blur hover:bg-white/30 rounded-lg transition">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 10:45 - Available -->
+                        <div class="time-slot p-5 rounded-xl border-2 border-gray-200">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-4">
+                                    <div class="text-center text-gray-400">
+                                        <p class="text-lg font-bold">10:45</p>
+                                        <p class="text-xs">30 min</p>
+                                    </div>
+                                    <div class="w-px h-12 bg-gray-200"></div>
+                                    <div>
+                                        <p class="text-gray-400 font-semibold">Horario disponible</p>
+                                    </div>
+                                </div>
+                                <button class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition font-semibold">
+                                    <i class="fas fa-plus mr-2"></i>Agendar
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- 11:15 - Available -->
+                        <div class="time-slot p-5 rounded-xl border-2 border-gray-200">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-4">
+                                    <div class="text-center text-gray-400">
+                                        <p class="text-lg font-bold">11:15</p>
+                                        <p class="text-xs">30 min</p>
+                                    </div>
+                                    <div class="w-px h-12 bg-gray-200"></div>
+                                    <div>
+                                        <p class="text-gray-400 font-semibold">Horario disponible</p>
+                                    </div>
+                                </div>
+                                <button class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition font-semibold">
+                                    <i class="fas fa-plus mr-2"></i>Agendar
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- 11:45 - Available -->
+                        <div class="time-slot p-5 rounded-xl border-2 border-gray-200">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-4">
+                                    <div class="text-center text-gray-400">
+                                        <p class="text-lg font-bold">11:45</p>
+                                        <p class="text-xs">30 min</p>
+                                    </div>
+                                    <div class="w-px h-12 bg-gray-200"></div>
+                                    <div>
+                                        <p class="text-gray-400 font-semibold">Horario disponible</p>
+                                    </div>
+                                </div>
+                                <button class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition font-semibold">
+                                    <i class="fas fa-plus mr-2"></i>Agendar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats -->
+                <div class="grid grid-cols-3 gap-6 mt-8">
+                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 text-center">
+                        <p class="text-4xl font-bold text-indigo-600 mb-2">12</p>
+                        <p class="text-gray-600 font-medium">Citas Hoy</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 text-center">
+                        <p class="text-4xl font-bold text-green-600 mb-2">9</p>
+                        <p class="text-gray-600 font-medium">Confirmadas</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 text-center">
+                        <p class="text-4xl font-bold text-orange-600 mb-2">3</p>
+                        <p class="text-gray-600 font-medium">Pendientes</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

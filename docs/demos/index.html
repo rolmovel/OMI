@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OMI - Aplicaciones Demostradoras</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        
+        * {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .app-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .app-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+        
+        .app-card:hover::before {
+            opacity: 1;
+        }
+        
+        .app-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+        }
+        
+        .feature-badge {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: .7;
+            }
+        }
+        
+        .icon-wrapper {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+        
+        .tech-badge {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.9);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4 md:p-8">
+    <div class="max-w-7xl w-full">
+        <!-- Header -->
+        <header class="text-center mb-12 md:mb-16">
+            <div class="inline-block mb-6">
+                <div class="w-20 h-20 md:w-28 md:h-28 mx-auto bg-white rounded-3xl flex items-center justify-center shadow-2xl">
+                    <span class="text-5xl md:text-7xl">🦷</span>
+                </div>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-black text-white mb-4 tracking-tight">OMI</h1>
+            <p class="text-xl md:text-3xl text-white/90 mb-3 font-semibold">Sistema de Gestión de Salud Infantil</p>
+            <p class="text-base md:text-xl text-white/70 font-medium">Aplicaciones Demostradoras Profesionales</p>
+            
+            <div class="mt-8 flex justify-center gap-4 flex-wrap">
+                <span class="tech-badge px-4 py-2 rounded-full text-sm font-semibold text-gray-700 border-2 border-white/50">
+                    <i class="fas fa-check-circle text-green-600 mr-2"></i>Desktop (Tauri)
+                </span>
+                <span class="tech-badge px-4 py-2 rounded-full text-sm font-semibold text-gray-700 border-2 border-white/50">
+                    <i class="fas fa-check-circle text-green-600 mr-2"></i>Web Responsive
+                </span>
+                <span class="tech-badge px-4 py-2 rounded-full text-sm font-semibold text-gray-700 border-2 border-white/50">
+                    <i class="fas fa-check-circle text-green-600 mr-2"></i>Mobile PWA
+                </span>
+            </div>
+        </header>
+
+        <!-- Main Applications -->
+        <div class="grid md:grid-cols-2 gap-6 md:gap-8 mb-12">
+            <!-- Clinical Area -->
+            <div class="app-card bg-white rounded-3xl p-8 md:p-10 shadow-2xl border-4 border-white/20" onclick="window.location.href='clinica/login.html'">
+                <div class="relative">
+                    <div class="icon-wrapper w-16 h-16 md:w-20 md:h-20 rounded-2xl flex items-center justify-center mb-6 text-white">
+                        <i class="fas fa-hospital text-3xl md:text-4xl"></i>
+                    </div>
+                    <span class="feature-badge absolute top-0 right-0 px-4 py-1 bg-gradient-to-r from-indigo-600 to-purple-600 text-white text-xs font-bold rounded-full">
+                        DESKTOP
+                    </span>
+                </div>
+                
+                <h2 class="text-3xl md:text-4xl font-black bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-4">
+                    Área Clínica
+                </h2>
+                <p class="text-gray-600 mb-8 text-base md:text-lg leading-relaxed">
+                    Aplicación desktop completa para profesionales dentales con todas las funcionalidades del sistema
+                </p>
+                
+                <div class="space-y-3 mb-8">
+                    <div class="flex items-start text-gray-700">
+                        <i class="fas fa-check-circle text-green-500 text-lg mr-3 mt-1 flex-shrink-0"></i>
+                        <span class="font-medium">Dashboard con estadísticas en tiempo real</span>
+                    </div>
+                    <div class="flex items-start text-gray-700">
+                        <i class="fas fa-check-circle text-green-500 text-lg mr-3 mt-1 flex-shrink-0"></i>
+                        <span class="font-medium">Gestión completa de pacientes y fichas</span>
+                    </div>
+                    <div class="flex items-start text-gray-700">
+                        <i class="fas fa-check-circle text-green-500 text-lg mr-3 mt-1 flex-shrink-0"></i>
+                        <span class="font-medium">Odontograma interactivo avanzado</span>
+                    </div>
+                    <div class="flex items-start text-gray-700">
+                        <i class="fas fa-check-circle text-green-500 text-lg mr-3 mt-1 flex-shrink-0"></i>
+                        <span class="font-medium">Formularios de revisión digital</span>
+                    </div>
+                    <div class="flex items-start text-gray-700">
+                        <i class="fas fa-check-circle text-green-500 text-lg mr-3 mt-1 flex-shrink-0"></i>
+                        <span class="font-medium">Sistema de agenda y citas</span>
+                    </div>
+                    <div class="flex items-start text-gray-700">
+                        <i class="fas fa-check-circle text-green-500 text-lg mr-3 mt-1 flex-shrink-0"></i>
+                        <span class="font-medium">Generación de informes y reportes</span>
+                    </div>
+                </div>
+                
+                <button class="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-4 md:py-5 rounded-xl font-bold text-base md:text-lg hover:shadow-2xl transition-all transform hover:scale-105">
+                    Acceder al Área Clínica
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </button>
+                
+                <div class="mt-6 p-4 bg-blue-50 rounded-xl border-2 border-blue-200">
+                    <p class="text-xs text-center text-blue-900 font-semibold">
+                        <i class="fas fa-info-circle mr-1"></i>
+                        Credenciales demo: doctor@clinica.com / demo123
+                    </p>
+                </div>
+            </div>
+
+            <!-- Family Area -->
+            <div class="app-card bg-white rounded-3xl p-8 md:p-10 shadow-2xl border-4 border-white/20" onclick="window.location.href='familias/login.html'">
+                <div class="relative">
+                    <div class="icon-wrapper w-16 h-16 md:w-20 md:h-20 rounded-2xl flex items-center justify-center mb-6 text-white">
+                        <i class="fas fa-users text-3xl md:text-4xl"></i>
+                    </div>
+                    <span class="feature-badge absolute top-0 right-0 px-4 py-1 bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-xs font-bold rounded-full">
+                        WEB/MOBILE
+                    </span>
+                </div>
+                
+                <h2 class="text-3xl md:text-4xl font-black bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent mb-4">
+                    Área Familias
+                </h2>
+                <p class="text-gray-600 mb-8 text-base md:text-lg leading-relaxed">
+                    Portal web/móvil para padres con acceso al seguimiento de salud bucodental de sus hijos
+                </p>
+                
+                <div class="space-y-3 mb-8">
+                    <div class="flex items-start text-gray-700">
+                        <i class="fas fa-check-circle text-cyan-500 text-lg mr-3 mt-1 flex-shrink-0"></i>
+                        <span class="font-medium">Carnet digital interactivo y visual</span>
+                    </div>
+                    <div class="flex items-start text-gray-700">
+                        <i class="fas fa-check-circle text-cyan-500 text-lg mr-3 mt-1 flex-shrink-0"></i>
+                        <span class="font-medium">Historial completo de revisiones</span>
+                    </div>
+                    <div class="flex items-start text-gray-700">
+                        <i class="fas fa-check-circle text-cyan-500 text-lg mr-3 mt-1 flex-shrink-0"></i>
+                        <span class="font-medium">Sistema de gamificación y logros</span>
+                    </div>
+                    <div class="flex items-start text-gray-700">
+                        <i class="fas fa-check-circle text-cyan-500 text-lg mr-3 mt-1 flex-shrink-0"></i>
+                        <span class="font-medium">Solicitud de citas online</span>
+                    </div>
+                    <div class="flex items-start text-gray-700">
+                        <i class="fas fa-check-circle text-cyan-500 text-lg mr-3 mt-1 flex-shrink-0"></i>
+                        <span class="font-medium">Recursos educativos interactivos</span>
+                    </div>
+                    <div class="flex items-start text-gray-700">
+                        <i class="fas fa-check-circle text-cyan-500 text-lg mr-3 mt-1 flex-shrink-0"></i>
+                        <span class="font-medium">Notificaciones y recordatorios</span>
+                    </div>
+                </div>
+                
+                <button class="w-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white py-4 md:py-5 rounded-xl font-bold text-base md:text-lg hover:shadow-2xl transition-all transform hover:scale-105">
+                    Acceder al Área Familias
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </button>
+                
+                <div class="mt-6 p-4 bg-green-50 rounded-xl border-2 border-green-200">
+                    <p class="text-xs text-center text-green-900 font-semibold">
+                        <i class="fas fa-info-circle mr-1"></i>
+                        Credenciales demo: ana@email.com / demo123
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technical Features -->
+        <div class="bg-white/10 backdrop-blur-xl rounded-3xl p-8 md:p-10 shadow-2xl border-2 border-white/20 mb-8">
+            <h3 class="text-2xl md:text-4xl font-black text-white mb-8 text-center">
+                Características Técnicas Destacadas
+            </h3>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                <div class="text-center p-4 bg-white/10 rounded-2xl backdrop-blur">
+                    <div class="text-4xl md:text-5xl mb-3">🔒</div>
+                    <h4 class="text-sm md:text-base font-bold text-white mb-2">Seguridad</h4>
+                    <p class="text-xs text-white/80">RGPD + LOPD</p>
+                </div>
+                
+                <div class="text-center p-4 bg-white/10 rounded-2xl backdrop-blur">
+                    <div class="text-4xl md:text-5xl mb-3">📱</div>
+                    <h4 class="text-sm md:text-base font-bold text-white mb-2">Responsive</h4>
+                    <p class="text-xs text-white/80">Multi-device</p>
+                </div>
+                
+                <div class="text-center p-4 bg-white/10 rounded-2xl backdrop-blur">
+                    <div class="text-4xl md:text-5xl mb-3">⚡</div>
+                    <h4 class="text-sm md:text-base font-bold text-white mb-2">Rendimiento</h4>
+                    <p class="text-xs text-white/80">Ultra rápido</p>
+                </div>
+                
+                <div class="text-center p-4 bg-white/10 rounded-2xl backdrop-blur">
+                    <div class="text-4xl md:text-5xl mb-3">🎨</div>
+                    <h4 class="text-sm md:text-base font-bold text-white mb-2">UI/UX</h4>
+                    <p class="text-xs text-white/80">Diseño moderno</p>
+                </div>
+                
+                <div class="text-center p-4 bg-white/10 rounded-2xl backdrop-blur">
+                    <div class="text-4xl md:text-5xl mb-3">📊</div>
+                    <h4 class="text-sm md:text-base font-bold text-white mb-2">Analytics</h4>
+                    <p class="text-xs text-white/80">Tiempo real</p>
+                </div>
+                
+                <div class="text-center p-4 bg-white/10 rounded-2xl backdrop-blur">
+                    <div class="text-4xl md:text-5xl mb-3">🎮</div>
+                    <h4 class="text-sm md:text-base font-bold text-white mb-2">Gamificación</h4>
+                    <p class="text-xs text-white/80">Interactivo</p>
+                </div>
+                
+                <div class="text-center p-4 bg-white/10 rounded-2xl backdrop-blur">
+                    <div class="text-4xl md:text-5xl mb-3">☁️</div>
+                    <h4 class="text-sm md:text-base font-bold text-white mb-2">Cloud</h4>
+                    <p class="text-xs text-white/80">Sincronizado</p>
+                </div>
+                
+                <div class="text-center p-4 bg-white/10 rounded-2xl backdrop-blur">
+                    <div class="text-4xl md:text-5xl mb-3">🔔</div>
+                    <h4 class="text-sm md:text-base font-bold text-white mb-2">Notificaciones</h4>
+                    <p class="text-xs text-white/80">Push & Email</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technology Stack -->
+        <div class="bg-white rounded-3xl p-8 md:p-10 shadow-2xl border-4 border-white/20">
+            <h3 class="text-2xl md:text-3xl font-black text-gray-900 mb-8 text-center">
+                Stack Tecnológico
+            </h3>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <div>
+                    <h4 class="font-bold text-lg text-indigo-600 mb-4 flex items-center">
+                        <i class="fas fa-desktop mr-2"></i> Frontend
+                    </h4>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2 text-sm"></i> React + TypeScript</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2 text-sm"></i> Tailwind CSS</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2 text-sm"></i> Shadcn/ui Components</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2 text-sm"></i> Tauri (Desktop)</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg text-purple-600 mb-4 flex items-center">
+                        <i class="fas fa-server mr-2"></i> Backend
+                    </h4>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2 text-sm"></i> Spring Boot</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2 text-sm"></i> PostgreSQL</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2 text-sm"></i> Redis Cache</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2 text-sm"></i> MinIO/S3</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg text-cyan-600 mb-4 flex items-center">
+                        <i class="fas fa-cloud mr-2"></i> DevOps
+                    </h4>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2 text-sm"></i> Docker</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2 text-sm"></i> Kubernetes</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2 text-sm"></i> GitHub Actions</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2 text-sm"></i> Servidores UE</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="mt-12 text-center">
+            <div class="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <p class="text-white font-semibold mb-2">
+                    <i class="fas fa-code mr-2"></i>
+                    OMI - Sistema de Gestión de Salud Infantil v1.0.0
+                </p>
+                <p class="text-white/70 text-sm">
+                    Aplicaciones Demostradoras Profesionales • 2024
+                </p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

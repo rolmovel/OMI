@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha Paciente - OMI Clínica</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        * { font-family: 'Inter', system-ui, sans-serif; }
+        .nav-item { transition: all 0.2s; }
+        .nav-item:hover:not(.active) { background: rgba(79, 70, 229, 0.08); }
+        .nav-item.active { background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%); color: white; }
+        .tab-button { transition: all 0.2s; }
+        .tab-button.active { border-bottom: 3px solid #4F46E5; color: #4F46E5; font-weight: 600; }
+        .tooth { transition: all 0.2s; cursor: pointer; }
+        .tooth:hover { transform: scale(1.1); }
+        .tooth.healthy { fill: #10B981; }
+        .tooth.caries { fill: #EF4444; }
+        .tooth.filled { fill: #3B82F6; }
+        .tooth.sealed { fill: #8B5CF6; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-full mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+                <div class="w-10 h-10 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-lg flex items-center justify-center shadow-lg">
+                    <span class="text-2xl">🦷</span>
+                </div>
+                <span class="text-xl font-bold text-gray-900">OMI</span>
+            </div>
+            <div class="flex items-center space-x-6">
+                <span class="text-gray-700 font-medium hidden md:block">Dr. Juan Pérez</span>
+                <div class="flex items-center space-x-3">
+                    <button class="relative p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition">
+                        <i class="fas fa-bell text-xl"></i>
+                        <span class="absolute top-1 right-1 w-2.5 h-2.5 bg-red-500 rounded-full border-2 border-white"></span>
+                    </button>
+                    <button class="p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition">
+                        <i class="fas fa-cog text-xl"></i>
+                    </button>
+                    <button onclick="window.location.href='login.html'" class="p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition">
+                        <i class="fas fa-sign-out-alt text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="flex">
+        <aside class="w-64 bg-white border-r border-gray-200 min-h-screen sticky top-[73px] h-[calc(100vh-73px)]">
+            <nav class="p-4 space-y-2">
+                <a href="dashboard.html" class="nav-item flex items-center space-x-3 px-4 py-3 rounded-xl text-gray-700 font-medium">
+                    <i class="fas fa-home text-lg"></i><span>Dashboard</span>
+                </a>
+                <a href="pacientes.html" class="nav-item active flex items-center space-x-3 px-4 py-3 rounded-xl font-medium">
+                    <i class="fas fa-users text-lg"></i><span>Pacientes</span>
+                </a>
+                <a href="agenda.html" class="nav-item flex items-center space-x-3 px-4 py-3 rounded-xl text-gray-700 font-medium">
+                    <i class="fas fa-calendar-alt text-lg"></i><span>Agenda</span>
+                </a>
+                <a href="estadisticas.html" class="nav-item flex items-center space-x-3 px-4 py-3 rounded-xl text-gray-700 font-medium">
+                    <i class="fas fa-chart-bar text-lg"></i><span>Estadísticas</span>
+                </a>
+                <div class="pt-4 border-t border-gray-200 mt-4">
+                    <a href="../index.html" class="nav-item flex items-center space-x-3 px-4 py-3 rounded-xl text-gray-700 font-medium">
+                        <i class="fas fa-arrow-left text-lg"></i><span>Volver al inicio</span>
+                    </a>
+                </div>
+            </nav>
+        </aside>
+
+        <main class="flex-1 p-6 lg:p-8">
+            <div class="max-w-7xl mx-auto">
+                <!-- Back button -->
+                <div class="mb-6">
+                    <a href="pacientes.html" class="text-gray-600 hover:text-gray-900 font-medium flex items-center">
+                        <i class="fas fa-arrow-left mr-2"></i> Volver a Pacientes
+                    </a>
+                </div>
+
+                <!-- Patient Header Card -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 mb-6">
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-20 h-20 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl flex items-center justify-center text-white text-3xl font-bold shadow-lg">
+                                CR
+                            </div>
+                            <div>
+                                <h1 class="text-3xl font-bold text-gray-900">Carlos Rodríguez</h1>
+                                <p class="text-gray-600 text-lg">5 años (15/05/2018) • MRN: MRN001</p>
+                            </div>
+                        </div>
+                        <div class="flex space-x-3">
+                            <button class="px-4 py-2 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-700 transition">
+                                <i class="fas fa-plus mr-2"></i>Nueva Revisión
+                            </button>
+                            <button class="px-4 py-2 border-2 border-gray-300 text-gray-700 rounded-lg font-semibold hover:bg-gray-50 transition">
+                                <i class="fas fa-id-card mr-2"></i>Ver Carnet
+                            </button>
+                            <button class="px-4 py-2 border-2 border-gray-300 text-gray-700 rounded-lg font-semibold hover:bg-gray-50 transition">
+                                <i class="fas fa-file-pdf mr-2"></i>Generar Informe
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-4 gap-4">
+                        <div class="text-center p-4 bg-blue-50 rounded-xl border border-blue-200">
+                            <p class="text-sm text-gray-600 mb-1">Plan</p>
+                            <p class="text-lg font-bold text-blue-700">PREVENTIVO</p>
+                        </div>
+                        <div class="text-center p-4 bg-green-50 rounded-xl border border-green-200">
+                            <p class="text-sm text-gray-600 mb-1">Riesgo</p>
+                            <p class="text-lg font-bold text-green-700">🟢 BAJO</p>
+                        </div>
+                        <div class="text-center p-4 bg-purple-50 rounded-xl border border-purple-200">
+                            <p class="text-sm text-gray-600 mb-1">Estado</p>
+                            <p class="text-lg font-bold text-purple-700">✅ ACTIVO</p>
+                        </div>
+                        <div class="text-center p-4 bg-orange-50 rounded-xl border border-orange-200">
+                            <p class="text-sm text-gray-600 mb-1">Última Revisión</p>
+                            <p class="text-lg font-bold text-orange-700">15/01/2024</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tabs -->
+                <div class="bg-white rounded-t-2xl border-b border-gray-200 mb-0">
+                    <div class="flex space-x-8 px-6">
+                        <button class="tab-button active py-4 text-gray-600" onclick="showTab('general')">
+                            Datos Generales
+                        </button>
+                        <button class="tab-button py-4 text-gray-600" onclick="showTab('historial')">
+                            Historial
+                        </button>
+                        <button class="tab-button py-4 text-gray-600" onclick="showTab('odontograma')">
+                            Odontograma
+                        </button>
+                        <button class="tab-button py-4 text-gray-600" onclick="showTab('fotos')">
+                            Fotos
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tab Content -->
+                <div id="tab-content" class="bg-white rounded-b-2xl p-6 shadow-sm border border-gray-100 border-t-0">
+                    <!-- Datos Generales Tab -->
+                    <div id="general-tab">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 mb-4">Información Personal</h3>
+                                <div class="space-y-3">
+                                    <div class="flex justify-between py-2 border-b border-gray-100">
+                                        <span class="text-gray-600">Nombre completo:</span>
+                                        <span class="font-semibold text-gray-900">Carlos Rodríguez García</span>
+                                    </div>
+                                    <div class="flex justify-between py-2 border-b border-gray-100">
+                                        <span class="text-gray-600">Fecha de nacimiento:</span>
+                                        <span class="font-semibold text-gray-900">15/05/2018 (5 años)</span>
+                                    </div>
+                                    <div class="flex justify-between py-2 border-b border-gray-100">
+                                        <span class="text-gray-600">DNI/NIE:</span>
+                                        <span class="font-semibold text-gray-900">12345678A</span>
+                                    </div>
+                                    <div class="flex justify-between py-2 border-b border-gray-100">
+                                        <span class="text-gray-600">Género:</span>
+                                        <span class="font-semibold text-gray-900">Masculino</span>
+                                    </div>
+                                </div>
+
+                                <h3 class="text-xl font-bold text-gray-900 mb-4 mt-8">Historia Médica</h3>
+                                <div class="space-y-3">
+                                    <div class="flex justify-between py-2 border-b border-gray-100">
+                                        <span class="text-gray-600">Alergias:</span>
+                                        <span class="font-semibold text-gray-900">Ninguna</span>
+                                    </div>
+                                    <div class="flex justify-between py-2 border-b border-gray-100">
+                                        <span class="text-gray-600">Medicación actual:</span>
+                                        <span class="font-semibold text-gray-900">Ninguna</span>
+                                    </div>
+                                    <div class="flex justify-between py-2 border-b border-gray-100">
+                                        <span class="text-gray-600">Condiciones médicas:</span>
+                                        <span class="font-semibold text-gray-900">Ninguna</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 mb-4">Tutores Legales</h3>
+                                <div class="p-4 bg-blue-50 rounded-xl border border-blue-200 mb-4">
+                                    <div class="flex items-center mb-3">
+                                        <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold mr-3">
+                                            AR
+                                        </div>
+                                        <div>
+                                            <p class="font-semibold text-gray-900">Ana Rodríguez</p>
+                                            <p class="text-sm text-gray-600">Madre • Principal</p>
+                                        </div>
+                                    </div>
+                                    <div class="space-y-2">
+                                        <p class="text-sm text-gray-700"><i class="fas fa-envelope mr-2 text-blue-600"></i> ana@email.com</p>
+                                        <p class="text-sm text-gray-700"><i class="fas fa-phone mr-2 text-blue-600"></i> +34 612 345 678</p>
+                                    </div>
+                                </div>
+
+                                <h3 class="text-xl font-bold text-gray-900 mb-4 mt-8">Estadísticas</h3>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="p-4 bg-green-50 rounded-xl border border-green-200 text-center">
+                                        <p class="text-3xl font-bold text-green-700 mb-1">3</p>
+                                        <p class="text-sm text-gray-600">Revisiones</p>
+                                    </div>
+                                    <div class="p-4 bg-blue-50 rounded-xl border border-blue-200 text-center">
+                                        <p class="text-3xl font-bold text-blue-700 mb-1">15.5%</p>
+                                        <p class="text-sm text-gray-600">Índice de placa</p>
+                                    </div>
+                                    <div class="p-4 bg-purple-50 rounded-xl border border-purple-200 text-center">
+                                        <p class="text-3xl font-bold text-purple-700 mb-1">0</p>
+                                        <p class="text-sm text-gray-600">Caries totales</p>
+                                    </div>
+                                    <div class="p-4 bg-orange-50 rounded-xl border border-orange-200 text-center">
+                                        <p class="text-3xl font-bold text-orange-700 mb-1">2 🏆</p>
+                                        <p class="text-sm text-gray-600">Logros</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Other tabs hidden by default -->
+                    <div id="historial-tab" class="hidden">
+                        <h3 class="text-xl font-bold text-gray-900 mb-6">Historial de Revisiones</h3>
+                        <div class="space-y-4">
+                            <div class="p-6 border-2 border-gray-200 rounded-xl hover:border-indigo-300 transition">
+                                <div class="flex items-start justify-between mb-3">
+                                    <div>
+                                        <h4 class="font-bold text-gray-900 text-lg">Revisión Preventiva</h4>
+                                        <p class="text-gray-600">15 de Enero 2024 • Dr. Juan Pérez</p>
+                                    </div>
+                                    <span class="px-3 py-1 bg-green-100 text-green-700 text-xs font-semibold rounded-full">Completada</span>
+                                </div>
+                                <p class="text-gray-700 mb-3">Dentición temporal completa. Sin caries. Todas las piezas en buen estado.</p>
+                                <div class="flex space-x-2">
+                                    <span class="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-semibold rounded-full">
+                                        <i class="fas fa-shield-alt mr-1"></i>Fluoración
+                                    </span>
+                                    <span class="px-3 py-1 bg-purple-100 text-purple-700 text-xs font-semibold rounded-full">
+                                        <i class="fas fa-tooth mr-1"></i>Limpieza
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="p-6 border-2 border-gray-200 rounded-xl hover:border-indigo-300 transition">
+                                <div class="flex items-start justify-between mb-3">
+                                    <div>
+                                        <h4 class="font-bold text-gray-900 text-lg">Revisión Preventiva</h4>
+                                        <p class="text-gray-600">10 de Julio 2023 • Dr. Juan Pérez</p>
+                                    </div>
+                                    <span class="px-3 py-1 bg-green-100 text-green-700 text-xs font-semibold rounded-full">Completada</span>
+                                </div>
+                                <p class="text-gray-700 mb-3">Buen estado general. Higiene correcta. Se aplicó fluoración preventiva.</p>
+                                <div class="flex space-x-2">
+                                    <span class="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-semibold rounded-full">
+                                        <i class="fas fa-shield-alt mr-1"></i>Fluoración
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="odontograma-tab" class="hidden">
+                        <h3 class="text-xl font-bold text-gray-900 mb-6">Odontograma Actual</h3>
+                        <div class="bg-gradient-to-br from-blue-50 to-purple-50 p-8 rounded-2xl border-2 border-indigo-200">
+                            <p class="text-center text-gray-700 mb-6 text-lg">
+                                <i class="fas fa-tooth text-4xl text-indigo-600 mb-4 block"></i>
+                                Odontograma Interactivo<br>
+                                <span class="text-sm text-gray-600">Dentición temporal completa - Todas las piezas sanas</span>
+                            </p>
+                            <div class="flex justify-center space-x-8">
+                                <div class="text-center">
+                                    <div class="w-4 h-4 bg-green-500 rounded-full inline-block mr-2"></div>
+                                    <span class="text-sm">Sano</span>
+                                </div>
+                                <div class="text-center">
+                                    <div class="w-4 h-4 bg-red-500 rounded-full inline-block mr-2"></div>
+                                    <span class="text-sm">Caries</span>
+                                </div>
+                                <div class="text-center">
+                                    <div class="w-4 h-4 bg-blue-500 rounded-full inline-block mr-2"></div>
+                                    <span class="text-sm">Obturado</span>
+                                </div>
+                                <div class="text-center">
+                                    <div class="w-4 h-4 bg-purple-500 rounded-full inline-block mr-2"></div>
+                                    <span class="text-sm">Sellador</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="fotos-tab" class="hidden">
+                        <h3 class="text-xl font-bold text-gray-900 mb-6">Galería de Fotos Clínicas</h3>
+                        <div class="grid grid-cols-3 gap-4">
+                            <div class="aspect-square bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl flex items-center justify-center border-2 border-gray-300">
+                                <i class="fas fa-camera text-4xl text-gray-400"></i>
+                            </div>
+                            <div class="aspect-square bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl flex items-center justify-center border-2 border-gray-300">
+                                <i class="fas fa-camera text-4xl text-gray-400"></i>
+                            </div>
+                            <div class="aspect-square bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl flex items-center justify-center border-2 border-gray-300">
+                                <i class="fas fa-camera text-4xl text-gray-400"></i>
+                            </div>
+                        </div>
+                        <button class="mt-6 w-full py-3 border-2 border-dashed border-gray-300 rounded-xl text-gray-600 hover:border-indigo-400 hover:text-indigo-600 transition">
+                            <i class="fas fa-plus mr-2"></i>Subir nueva foto
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function showTab(tabName) {
+            // Hide all tabs
+            document.querySelectorAll('[id$="-tab"]').forEach(tab => {
+                tab.classList.add('hidden');
+            });
+            
+            // Remove active class from all buttons
+            document.querySelectorAll('.tab-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected tab
+            document.getElementById(tabName + '-tab').classList.remove('hidden');
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>

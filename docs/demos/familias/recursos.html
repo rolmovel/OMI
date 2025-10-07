@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursos Educativos - OMI Familias</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        * { font-family: 'Inter', system-ui, sans-serif; }
+        .resource-card { transition: all 0.3s; cursor: pointer; }
+        .resource-card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,0.15); }
+        .category-btn { transition: all 0.2s; }
+        .category-btn.active { background: linear-gradient(135deg, #06B6D4 0%, #3B82F6 100%); color: white; }
+        .nav-btn { transition: all 0.2s; }
+        .nav-btn.active { color: #06B6D4; border-top: 3px solid #06B6D4; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-4xl mx-auto px-4 py-4">
+            <div class="flex items-center justify-between mb-4">
+                <h1 class="text-xl font-bold text-gray-900">Recursos Educativos</h1>
+                <button class="p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg">
+                    <i class="fas fa-search text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Search Bar -->
+            <div class="relative">
+                <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                    <i class="fas fa-search text-gray-400"></i>
+                </div>
+                <input 
+                    type="text" 
+                    placeholder="Buscar recursos..."
+                    class="w-full pl-12 pr-4 py-3 border-2 border-gray-200 rounded-xl focus:border-cyan-500 focus:outline-none"
+                >
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-6 pb-24">
+        <!-- Categories -->
+        <div class="mb-6">
+            <h2 class="text-lg font-bold text-gray-900 mb-4">Categorías</h2>
+            <div class="flex flex-wrap gap-3">
+                <button class="category-btn active px-6 py-3 border-2 border-cyan-500 rounded-xl font-semibold text-sm">
+                    <i class="fas fa-tooth mr-2"></i>Higiene
+                </button>
+                <button class="category-btn px-6 py-3 border-2 border-gray-300 rounded-xl font-semibold text-sm text-gray-700">
+                    <i class="fas fa-apple-alt mr-2"></i>Dieta
+                </button>
+                <button class="category-btn px-6 py-3 border-2 border-gray-300 rounded-xl font-semibold text-sm text-gray-700">
+                    <i class="fas fa-shield-alt mr-2"></i>Prevención
+                </button>
+                <button class="category-btn px-6 py-3 border-2 border-gray-300 rounded-xl font-semibold text-sm text-gray-700">
+                    <i class="fas fa-smile mr-2"></i>Ortodoncia
+                </button>
+            </div>
+        </div>
+
+        <!-- Recommended -->
+        <div class="mb-8">
+            <h2 class="text-lg font-bold text-gray-900 mb-4">Recomendado para ti</h2>
+            
+            <div class="space-y-4">
+                <!-- Video Resource -->
+                <div class="resource-card bg-white rounded-2xl p-6 shadow-sm border border-gray-200">
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0 w-24 h-24 bg-gradient-to-br from-red-400 to-red-600 rounded-xl flex items-center justify-center text-white shadow-lg">
+                            <i class="fas fa-play text-4xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <span class="px-3 py-1 bg-red-100 text-red-700 text-xs font-semibold rounded-full">Video</span>
+                            <h3 class="text-lg font-bold text-gray-900 mt-2 mb-2">
+                                Cómo cepillar los dientes (3-6 años)
+                            </h3>
+                            <p class="text-sm text-gray-600 mb-3">
+                                Tutorial paso a paso para enseñar a los niños a cepillarse correctamente
+                            </p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fas fa-clock mr-2 text-cyan-600"></i>
+                                <span class="font-semibold">2:30 min</span>
+                                <span class="mx-3">•</span>
+                                <i class="fas fa-eye mr-2 text-cyan-600"></i>
+                                <span class="font-semibold">1.2K vistas</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Infographic -->
+                <div class="resource-card bg-white rounded-2xl p-6 shadow-sm border border-gray-200">
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0 w-24 h-24 bg-gradient-to-br from-green-400 to-green-600 rounded-xl flex items-center justify-center text-white shadow-lg">
+                            <i class="fas fa-image text-4xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <span class="px-3 py-1 bg-green-100 text-green-700 text-xs font-semibold rounded-full">Infografía</span>
+                            <h3 class="text-lg font-bold text-gray-900 mt-2 mb-2">
+                                Alimentos buenos para los dientes
+                            </h3>
+                            <p class="text-sm text-gray-600 mb-3">
+                                Guía visual de alimentos que fortalecen la salud dental infantil
+                            </p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fas fa-download mr-2 text-cyan-600"></i>
+                                <span class="font-semibold">Descargar PDF</span>
+                                <span class="mx-3">•</span>
+                                <i class="fas fa-eye mr-2 text-cyan-600"></i>
+                                <span class="font-semibold">845 vistas</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game -->
+                <div class="resource-card bg-white rounded-2xl p-6 shadow-sm border border-gray-200">
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0 w-24 h-24 bg-gradient-to-br from-purple-400 to-purple-600 rounded-xl flex items-center justify-center text-white shadow-lg">
+                            <i class="fas fa-gamepad text-4xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <span class="px-3 py-1 bg-purple-100 text-purple-700 text-xs font-semibold rounded-full">Juego</span>
+                            <h3 class="text-lg font-bold text-gray-900 mt-2 mb-2">
+                                Aprende a cepillarte jugando
+                            </h3>
+                            <p class="text-sm text-gray-600 mb-3">
+                                Juego interactivo que enseña la técnica correcta de cepillado
+                            </p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <div class="flex text-yellow-400 mr-2">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="font-semibold">5.0</span>
+                                <span class="mx-3">•</span>
+                                <span class="font-semibold">523 jugadores</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Article -->
+                <div class="resource-card bg-white rounded-2xl p-6 shadow-sm border border-gray-200">
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0 w-24 h-24 bg-gradient-to-br from-blue-400 to-blue-600 rounded-xl flex items-center justify-center text-white shadow-lg">
+                            <i class="fas fa-book-open text-4xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-semibold rounded-full">Artículo</span>
+                            <h3 class="text-lg font-bold text-gray-900 mt-2 mb-2">
+                                Importancia del flúor en niños
+                            </h3>
+                            <p class="text-sm text-gray-600 mb-3">
+                                Todo lo que necesitas saber sobre el flúor y la salud dental infantil
+                            </p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fas fa-clock mr-2 text-cyan-600"></i>
+                                <span class="font-semibold">5 min lectura</span>
+                                <span class="mx-3">•</span>
+                                <i class="fas fa-eye mr-2 text-cyan-600"></i>
+                                <span class="font-semibold">634 vistas</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Checklist -->
+                <div class="resource-card bg-white rounded-2xl p-6 shadow-sm border border-gray-200">
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0 w-24 h-24 bg-gradient-to-br from-orange-400 to-orange-600 rounded-xl flex items-center justify-center text-white shadow-lg">
+                            <i class="fas fa-list-check text-4xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <span class="px-3 py-1 bg-orange-100 text-orange-700 text-xs font-semibold rounded-full">Lista</span>
+                            <h3 class="text-lg font-bold text-gray-900 mt-2 mb-2">
+                                Rutina diaria de higiene bucal
+                            </h3>
+                            <p class="text-sm text-gray-600 mb-3">
+                                Checklist completo para una correcta rutina de higiene dental
+                            </p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fas fa-download mr-2 text-cyan-600"></i>
+                                <span class="font-semibold">Descargar</span>
+                                <span class="mx-3">•</span>
+                                <i class="fas fa-print mr-2 text-cyan-600"></i>
+                                <span class="font-semibold">Imprimir</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl p-8 text-center text-white shadow-lg">
+            <div class="text-5xl mb-4">📚</div>
+            <h3 class="text-2xl font-bold mb-3">¿Tienes dudas?</h3>
+            <p class="mb-6 text-cyan-50">
+                Contacta con nuestra clínica para resolver todas tus preguntas
+            </p>
+            <button class="px-8 py-3 bg-white text-cyan-600 font-bold rounded-xl hover:shadow-lg transition">
+                <i class="fas fa-comments mr-2"></i>Contactar Clínica
+            </button>
+        </div>
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-lg">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="flex justify-around py-3">
+                <button onclick="window.location.href='home.html'" class="flex flex-col items-center py-2 px-4 text-gray-600">
+                    <i class="fas fa-home text-xl mb-1"></i>
+                    <span class="text-xs font-semibold">Inicio</span>
+                </button>
+                <button onclick="window.location.href='citas.html'" class="flex flex-col items-center py-2 px-4 text-gray-600">
+                    <i class="fas fa-calendar text-xl mb-1"></i>
+                    <span class="text-xs font-semibold">Citas</span>
+                </button>
+                <button onclick="window.location.href='informes.html'" class="flex flex-col items-center py-2 px-4 text-gray-600">
+                    <i class="fas fa-file-alt text-xl mb-1"></i>
+                    <span class="text-xs font-semibold">Informes</span>
+                </button>
+                <button class="nav-btn active flex flex-col items-center py-2 px-4 text-gray-600">
+                    <i class="fas fa-book text-xl mb-1"></i>
+                    <span class="text-xs font-semibold">Recursos</span>
+                </button>
+                <button class="flex flex-col items-center py-2 px-4 text-gray-600">
+                    <i class="fas fa-user text-xl mb-1"></i>
+                    <span class="text-xs font-semibold">Perfil</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        document.querySelectorAll('.category-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

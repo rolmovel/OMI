@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe Detallado - OMI Familias</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        * { font-family: 'Inter', system-ui, sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
+            <button onclick="window.location.href='informes.html'" class="text-gray-600 hover:text-gray-900">
+                <i class="fas fa-arrow-left text-xl"></i>
+            </button>
+            <h1 class="text-xl font-bold text-gray-900">Informe de Revisión</h1>
+            <button class="text-gray-600 hover:text-gray-900">
+                <i class="fas fa-download text-xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-8 pb-24">
+        <!-- Report Header -->
+        <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-200 mb-6 text-center">
+            <div class="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg">
+                <span class="text-4xl">🦷</span>
+            </div>
+            <h2 class="text-2xl font-bold text-gray-900 mb-2">Informe de Revisión Preventiva</h2>
+            <p class="text-gray-600 text-lg font-semibold">15 de Enero 2024</p>
+        </div>
+
+        <!-- Patient Info -->
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-200 mb-6">
+            <h3 class="text-lg font-bold text-gray-900 mb-4">Datos del Paciente</h3>
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <p class="text-sm text-gray-600 mb-1">Nombre</p>
+                    <p class="font-bold text-gray-900">Carlos Rodríguez</p>
+                </div>
+                <div>
+                    <p class="text-sm text-gray-600 mb-1">Edad</p>
+                    <p class="font-bold text-gray-900">5 años (15/05/2018)</p>
+                </div>
+                <div>
+                    <p class="text-sm text-gray-600 mb-1">MRN</p>
+                    <p class="font-bold text-gray-900">MRN001</p>
+                </div>
+                <div>
+                    <p class="text-sm text-gray-600 mb-1">Plan</p>
+                    <span class="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-bold rounded-full">PREVENTIVO</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Professional Info -->
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-200 mb-6">
+            <h3 class="text-lg font-bold text-gray-900 mb-4">Profesional</h3>
+            <div class="flex items-center">
+                <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center text-white font-bold text-xl mr-4">
+                    JP
+                </div>
+                <div>
+                    <p class="font-bold text-gray-900 text-lg">Dr. Juan Pérez</p>
+                    <p class="text-gray-600">Odontólogo Pediátrico</p>
+                    <p class="text-sm text-gray-500">Col. 12345</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Findings -->
+        <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-6 border-2 border-green-200 mb-6">
+            <h3 class="text-lg font-bold text-gray-900 mb-4 flex items-center">
+                <i class="fas fa-clipboard-check text-green-600 mr-3 text-xl"></i>
+                Hallazgos de la Revisión
+            </h3>
+            <p class="text-gray-800 leading-relaxed mb-4">
+                Dentición temporal completa y en perfecto estado. No se observan caries ni lesiones de caries incipientes. 
+                Todas las piezas dentales presentan un esmalte sano y brillante. Excelente estado general de la cavidad oral.
+            </p>
+            <div class="p-4 bg-green-100 rounded-xl border border-green-300">
+                <p class="text-green-800 font-semibold">
+                    <i class="fas fa-star text-yellow-500 mr-2"></i>
+                    Estado de salud bucodental: EXCELENTE
+                </p>
+            </div>
+        </div>
+
+        <!-- Oral Hygiene -->
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-200 mb-6">
+            <h3 class="text-lg font-bold text-gray-900 mb-4 flex items-center">
+                <i class="fas fa-teeth text-cyan-600 mr-3 text-xl"></i>
+                Higiene Oral
+            </h3>
+            <div class="grid grid-cols-2 gap-4 mb-4">
+                <div class="p-4 bg-blue-50 rounded-xl text-center">
+                    <p class="text-3xl font-black text-blue-700 mb-1">15.5%</p>
+                    <p class="text-sm text-gray-700 font-semibold">Índice de Placa</p>
+                </div>
+                <div class="p-4 bg-green-50 rounded-xl text-center">
+                    <p class="text-3xl font-black text-green-700 mb-1">✅</p>
+                    <p class="text-sm text-gray-700 font-semibold">Excelente</p>
+                </div>
+            </div>
+            <p class="text-gray-700">
+                El índice de placa es excelente, indicando una correcta técnica de cepillado y buena adherencia 
+                a las pautas de higiene oral. Se observa mínima acumulación de placa en zonas interproximales.
+            </p>
+        </div>
+
+        <!-- Treatments -->
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-200 mb-6">
+            <h3 class="text-lg font-bold text-gray-900 mb-4 flex items-center">
+                <i class="fas fa-syringe text-purple-600 mr-3 text-xl"></i>
+                Tratamientos Realizados
+            </h3>
+            <div class="space-y-3">
+                <div class="flex items-start p-4 bg-blue-50 rounded-xl border border-blue-200">
+                    <i class="fas fa-shield-alt text-blue-600 text-2xl mr-4 mt-1"></i>
+                    <div>
+                        <p class="font-bold text-gray-900">Fluoración con barniz 5%</p>
+                        <p class="text-sm text-gray-600 mt-1">Aplicación tópica de flúor para fortalecer el esmalte dental y prevenir caries</p>
+                    </div>
+                </div>
+                <div class="flex items-start p-4 bg-purple-50 rounded-xl border border-purple-200">
+                    <i class="fas fa-tooth text-purple-600 text-2xl mr-4 mt-1"></i>
+                    <div>
+                        <p class="font-bold text-gray-900">Limpieza profesional</p>
+                        <p class="text-sm text-gray-600 mt-1">Eliminación de placa bacteriana y sarro. Pulido de superficies dentales</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Photos -->
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-200 mb-6">
+            <h3 class="text-lg font-bold text-gray-900 mb-4 flex items-center">
+                <i class="fas fa-camera text-orange-600 mr-3 text-xl"></i>
+                Fotografías Clínicas
+            </h3>
+            <div class="grid grid-cols-3 gap-3">
+                <div class="aspect-square bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl flex items-center justify-center">
+                    <i class="fas fa-camera text-4xl text-gray-400"></i>
+                </div>
+                <div class="aspect-square bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl flex items-center justify-center">
+                    <i class="fas fa-camera text-4xl text-gray-400"></i>
+                </div>
+                <div class="aspect-square bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl flex items-center justify-center">
+                    <i class="fas fa-camera text-4xl text-gray-400"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recommendations -->
+        <div class="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-2xl p-6 border-2 border-cyan-200 mb-6">
+            <h3 class="text-lg font-bold text-gray-900 mb-4 flex items-center">
+                <i class="fas fa-lightbulb text-yellow-500 mr-3 text-xl"></i>
+                Recomendaciones
+            </h3>
+            <ul class="space-y-3">
+                <li class="flex items-start text-gray-800">
+                    <i class="fas fa-check-circle text-cyan-600 mr-3 mt-1 flex-shrink-0"></i>
+                    <span>Continuar con el cepillado dental 2 veces al día (mañana y noche)</span>
+                </li>
+                <li class="flex items-start text-gray-800">
+                    <i class="fas fa-check-circle text-cyan-600 mr-3 mt-1 flex-shrink-0"></i>
+                    <span>Iniciar el uso de hilo dental con supervisión de los padres</span>
+                </li>
+                <li class="flex items-start text-gray-800">
+                    <i class="fas fa-check-circle text-cyan-600 mr-3 mt-1 flex-shrink-0"></i>
+                    <span>Reducir el consumo de azúcar, especialmente entre comidas</span>
+                </li>
+                <li class="flex items-start text-gray-800">
+                    <i class="fas fa-check-circle text-cyan-600 mr-3 mt-1 flex-shrink-0"></i>
+                    <span>Mantener una dieta equilibrada rica en calcio y vitaminas</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Next Appointment -->
+        <div class="bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl p-6 text-white text-center mb-6">
+            <i class="fas fa-calendar-check text-5xl mb-3 opacity-80"></i>
+            <h3 class="text-2xl font-bold mb-2">Próxima Revisión</h3>
+            <p class="text-3xl font-black mb-4">15 de Julio 2024</p>
+            <p class="text-orange-50 mb-4">Revisión preventiva programada en 6 meses</p>
+            <button onclick="window.location.href='citas.html'" class="px-8 py-3 bg-white text-orange-600 font-bold rounded-xl hover:shadow-lg transition">
+                <i class="fas fa-calendar-plus mr-2"></i>Confirmar Cita
+            </button>
+        </div>
+
+        <!-- Actions -->
+        <div class="grid grid-cols-2 gap-4">
+            <button class="py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-bold rounded-xl hover:shadow-lg transition">
+                <i class="fas fa-download mr-2"></i>Descargar PDF
+            </button>
+            <button class="py-4 border-2 border-cyan-500 text-cyan-600 font-bold rounded-xl hover:bg-cyan-50 transition">
+                <i class="fas fa-share-alt mr-2"></i>Compartir
+            </button>
+        </div>
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-lg">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="flex justify-around py-3">
+                <button onclick="window.location.href='home.html'" class="flex flex-col items-center py-2 px-4 text-gray-600">
+                    <i class="fas fa-home text-xl mb-1"></i>
+                    <span class="text-xs font-semibold">Inicio</span>
+                </button>
+                <button onclick="window.location.href='citas.html'" class="flex flex-col items-center py-2 px-4 text-gray-600">
+                    <i class="fas fa-calendar text-xl mb-1"></i>
+                    <span class="text-xs font-semibold">Citas</span>
+                </button>
+                <button onclick="window.location.href='informes.html'" class="flex flex-col items-center py-2 px-4 text-gray-600">
+                    <i class="fas fa-file-alt text-xl mb-1"></i>
+                    <span class="text-xs font-semibold">Informes</span>
+                </button>
+                <button onclick="window.location.href='recursos.html'" class="flex flex-col items-center py-2 px-4 text-gray-600">
+                    <i class="fas fa-book text-xl mb-1"></i>
+                    <span class="text-xs font-semibold">Recursos</span>
+                </button>
+                <button class="flex flex-col items-center py-2 px-4 text-gray-600">
+                    <i class="fas fa-user text-xl mb-1"></i>
+                    <span class="text-xs font-semibold">Perfil</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+</body>
+</html>
