@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - OMI Familias</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="familias-theme">
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-left">
+                <span class="app-title">OMI</span>
+            </div>
+            <div class="header-right">
+                <div class="header-actions">
+                    <i class="fas fa-bell" onclick="showNotifications()">
+                        <span class="notification-badge">2</span>
+                    </i>
+                    <i class="fas fa-cog" onclick="showSettings()"></i>
+                    <i class="fas fa-user-circle" onclick="showProfileMenu()"></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="welcome-section">
+                <h1>Hola, Ana 👋</h1>
+                <p>Tus hijos tienen un excelente cuidado dental</p>
+            </div>
+
+            <!-- Children's Cards -->
+            <div class="children-section">
+                <h2>Mis Hijos</h2>
+
+                <div class="children-grid">
+                    <!-- Carlos Card -->
+                    <div class="child-card" onclick="viewCarnet('carlos')">
+                        <div class="child-avatar">CR</div>
+                        <div class="child-info">
+                            <h3>Carlos Rodríguez</h3>
+                            <p class="child-age">5 años</p>
+
+                            <div class="child-badges">
+                                <span class="plan-badge preventivo">Plan: PREVENTIVO</span>
+                                <span class="risk-badge low">Riesgo: 🟢 Bajo</span>
+                            </div>
+
+                            <div class="next-appointment">
+                                <p>Próxima revisión:</p>
+                                <p class="appointment-date">15 de Julio 2024</p>
+                            </div>
+
+                            <div class="achievements">
+                                <p>⭐⭐ 2 logros</p>
+                            </div>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn-primary">Ver Carnet Completo</button>
+                        </div>
+                    </div>
+
+                    <!-- María Card -->
+                    <div class="child-card" onclick="viewCarnet('maria')">
+                        <div class="child-avatar">MG</div>
+                        <div class="child-info">
+                            <h3>María Rodríguez</h3>
+                            <p class="child-age">8 años</p>
+
+                            <div class="child-badges">
+                                <span class="plan-badge him">Plan: HIM</span>
+                                <span class="risk-badge medium">Riesgo: 🟡 Moderado</span>
+                            </div>
+
+                            <div class="next-appointment">
+                                <p>Próxima revisión:</p>
+                                <p class="appointment-date">20 de Junio 2024</p>
+                            </div>
+
+                            <div class="achievements">
+                                <p>⭐⭐⭐ 3 logros</p>
+                            </div>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn-primary">Ver Carnet Completo</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="quick-actions">
+                <h2>Acciones Rápidas</h2>
+                <div class="actions-grid">
+                    <button class="action-card" onclick="requestAppointment()">
+                        <i class="fas fa-calendar-plus"></i>
+                        <span>Solicitar Cita</span>
+                    </button>
+
+                    <button class="action-card" onclick="viewReports()">
+                        <i class="fas fa-file-medical"></i>
+                        <span>Ver Informes</span>
+                    </button>
+
+                    <button class="action-card" onclick="viewResources()">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Recursos Educativos</span>
+                    </button>
+
+                    <button class="action-card" onclick="contactClinic()">
+                        <i class="fas fa-phone"></i>
+                        <span>Contactar Clínica</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Recent Activity -->
+            <div class="activity-section">
+                <h2>Actividad Reciente</h2>
+                <div class="activity-list">
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-file-medical"></i>
+                        </div>
+                        <div class="activity-content">
+                            <p><strong>Informe disponible</strong></p>
+                            <p>Revisión de Carlos - 15 de Enero 2024</p>
+                            <span class="activity-date">Hace 2 días</span>
+                        </div>
+                        <div class="activity-actions">
+                            <button class="btn-secondary" onclick="viewReport(1)">Ver</button>
+                        </div>
+                    </div>
+
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-bell"></i>
+                        </div>
+                        <div class="activity-content">
+                            <p><strong>Recordatorio</strong></p>
+                            <p>Próxima revisión de María en 5 días</p>
+                            <span class="activity-date">Ayer</span>
+                        </div>
+                        <div class="activity-actions">
+                            <button class="btn-outline" onclick="confirmAppointment()">Confirmar</button>
+                        </div>
+                    </div>
+
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="activity-content">
+                            <p><strong>¡Nuevo logro!</strong></p>
+                            <p>Carlos ha obtenido "Higiene Bronce"</p>
+                            <span class="activity-date">Hace 1 semana</span>
+                        </div>
+                        <div class="activity-actions">
+                            <button class="btn-secondary" onclick="viewAchievement()">Ver</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Bottom Navigation (Mobile) -->
+        <nav class="bottom-nav">
+            <a href="#" class="nav-item active" onclick="navigateTo('home')">
+                <i class="fas fa-home"></i>
+                <span>Inicio</span>
+            </a>
+            <a href="#" class="nav-item" onclick="navigateTo('citas')">
+                <i class="fas fa-calendar-alt"></i>
+                <span>Citas</span>
+            </a>
+            <a href="#" class="nav-item" onclick="navigateTo('informes')">
+                <i class="fas fa-file-medical"></i>
+                <span>Informes</span>
+            </a>
+            <a href="#" class="nav-item" onclick="navigateTo('recursos')">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Educación</span>
+            </a>
+            <a href="#" class="nav-item" onclick="navigateTo('perfil')">
+                <i class="fas fa-user-circle"></i>
+                <span>Perfil</span>
+            </a>
+        </nav>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

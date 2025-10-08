@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pacientes - OMI Clínica</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="clinica-theme">
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-left">
+                <img src="../assets/logo-placeholder.png" alt="Logo OMI" class="header-logo">
+                <span class="app-title">OMI</span>
+            </div>
+            <div class="header-right">
+                <span class="user-name">Dr. Juan Pérez</span>
+                <div class="header-actions">
+                    <i class="fas fa-user-circle" onclick="showProfileMenu()"></i>
+                    <i class="fas fa-cog" onclick="showSettings()"></i>
+                    <i class="fas fa-bell" onclick="showNotifications()">
+                        <span class="notification-badge">3</span>
+                    </i>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="main-nav">
+            <a href="#" class="nav-item" onclick="navigateTo('dashboard')">
+                <i class="fas fa-home"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="#" class="nav-item active" onclick="navigateTo('pacientes')">
+                <i class="fas fa-users"></i>
+                <span>Pacientes</span>
+            </a>
+            <a href="#" class="nav-item" onclick="navigateTo('agenda')">
+                <i class="fas fa-calendar-alt"></i>
+                <span>Agenda</span>
+            </a>
+            <a href="#" class="nav-item" onclick="navigateTo('estadisticas')">
+                <i class="fas fa-chart-bar"></i>
+                <span>Estadísticas</span>
+            </a>
+            <a href="#" class="nav-item" onclick="navigateTo('config')">
+                <i class="fas fa-cog"></i>
+                <span>Config</span>
+            </a>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-header">
+                <h1>Pacientes</h1>
+                <button class="btn-primary" onclick="newPatient()">
+                    <i class="fas fa-plus"></i>
+                    Nuevo Paciente
+                </button>
+            </div>
+
+            <!-- Search and Filters -->
+            <div class="search-section">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Buscar paciente..." id="searchInput">
+                </div>
+
+                <div class="filters">
+                    <select class="filter-select" id="planFilter">
+                        <option value="">Todos</option>
+                        <option value="PREVENTIVO">Preventivo</option>
+                        <option value="HIM">HIM</option>
+                        <option value="CRECIMIENTO">Crecimiento</option>
+                    </select>
+
+                    <select class="filter-select" id="riesgoFilter">
+                        <option value="">Riesgo</option>
+                        <option value="BAJO">Bajo</option>
+                        <option value="MEDIO">Medio</option>
+                        <option value="ALTO">Alto</option>
+                    </select>
+
+                    <select class="filter-select" id="edadFilter">
+                        <option value="">Edad</option>
+                        <option value="0-5">0-5 años</option>
+                        <option value="6-10">6-10 años</option>
+                        <option value="11-15">11-15 años</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Patients Table -->
+            <div class="patients-table">
+                <div class="table-header">
+                    <div class="table-col">Foto</div>
+                    <div class="table-col">Nombre</div>
+                    <div class="table-col">Edad</div>
+                    <div class="table-col">Plan</div>
+                    <div class="table-col">Riesgo</div>
+                    <div class="table-col">Última Rev</div>
+                    <div class="table-col">Acción</div>
+                </div>
+
+                <div class="table-body">
+                    <div class="table-row" onclick="viewPatient(1)">
+                        <div class="table-col">
+                            <div class="patient-avatar">CR</div>
+                        </div>
+                        <div class="table-col">
+                            <strong>Carlos Rodríguez</strong>
+                        </div>
+                        <div class="table-col">5</div>
+                        <div class="table-col">
+                            <span class="plan-badge preventivo">PREVENTIVO</span>
+                        </div>
+                        <div class="table-col">
+                            <span class="risk-badge low">🟢</span>
+                        </div>
+                        <div class="table-col">15/01/24</div>
+                        <div class="table-col">
+                            <button class="btn-secondary" onclick="event.stopPropagation(); viewPatient(1)">Ver</button>
+                        </div>
+                    </div>
+
+                    <div class="table-row" onclick="viewPatient(2)">
+                        <div class="table-col">
+                            <div class="patient-avatar">MG</div>
+                        </div>
+                        <div class="table-col">
+                            <strong>María García</strong>
+                        </div>
+                        <div class="table-col">8</div>
+                        <div class="table-col">
+                            <span class="plan-badge him">HIM</span>
+                        </div>
+                        <div class="table-col">
+                            <span class="risk-badge medium">🟡</span>
+                        </div>
+                        <div class="table-col">10/01/24</div>
+                        <div class="table-col">
+                            <button class="btn-secondary" onclick="event.stopPropagation(); viewPatient(2)">Ver</button>
+                        </div>
+                    </div>
+
+                    <div class="table-row" onclick="viewPatient(3)">
+                        <div class="table-col">
+                            <div class="patient-avatar">LM</div>
+                        </div>
+                        <div class="table-col">
+                            <strong>Luis Martínez</strong>
+                        </div>
+                        <div class="table-col">6</div>
+                        <div class="table-col">
+                            <span class="plan-badge crecimiento">CRECIMIENTO</span>
+                        </div>
+                        <div class="table-col">
+                            <span class="risk-badge low">🟢</span>
+                        </div>
+                        <div class="table-col">08/01/24</div>
+                        <div class="table-col">
+                            <button class="btn-secondary" onclick="event.stopPropagation(); viewPatient(3)">Ver</button>
+                        </div>
+                    </div>
+
+                    <div class="table-row" onclick="viewPatient(4)">
+                        <div class="table-col">
+                            <div class="patient-avatar">AL</div>
+                        </div>
+                        <div class="table-col">
+                            <strong>Ana López</strong>
+                        </div>
+                        <div class="table-col">4</div>
+                        <div class="table-col">
+                            <span class="plan-badge preventivo">PREVENTIVO</span>
+                        </div>
+                        <div class="table-col">
+                            <span class="risk-badge low">🟢</span>
+                        </div>
+                        <div class="table-col">20/12/23</div>
+                        <div class="table-col">
+                            <button class="btn-secondary" onclick="event.stopPropagation(); viewPatient(4)">Ver</button>
+                        </div>
+                    </div>
+
+                    <div class="table-row" onclick="viewPatient(5)">
+                        <div class="table-col">
+                            <div class="patient-avatar">PS</div>
+                        </div>
+                        <div class="table-col">
+                            <strong>Pedro Sánchez</strong>
+                        </div>
+                        <div class="table-col">7</div>
+                        <div class="table-col">
+                            <span class="plan-badge him">HIM</span>
+                        </div>
+                        <div class="table-col">
+                            <span class="risk-badge high">🔴</span>
+                        </div>
+                        <div class="table-col">15/11/23</div>
+                        <div class="table-col">
+                            <button class="btn-secondary" onclick="event.stopPropagation(); viewPatient(5)">Ver</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <span class="pagination-info">Mostrando 1-8 de 150 pacientes</span>
+                <div class="pagination-controls">
+                    <button class="btn-outline" disabled><i class="fas fa-chevron-left"></i></button>
+                    <span class="page-info">Página 1 de 19</span>
+                    <button class="btn-outline"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

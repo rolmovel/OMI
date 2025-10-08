@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OMI - Sistema de Gestión de Salud Infantil</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .feature-icon {
+            width: 64px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            border-radius: 16px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+    </style>
+</head>
+<body class="p-8">
+    <div class="max-w-7xl mx-auto">
+        <!-- Header -->
+        <header class="text-center mb-16 animate-fade-in">
+            <div class="inline-block mb-6">
+                <div class="text-6xl mb-4">🦷</div>
+            </div>
+            <h1 class="text-6xl font-bold text-white mb-4">OMI</h1>
+            <p class="text-2xl text-white/90 mb-2">Sistema de Gestión de Salud Infantil</p>
+            <p class="text-lg text-white/70">Demostradores Interactivos</p>
+        </header>
+
+        <!-- Main Applications -->
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+            <!-- Clinical Area -->
+            <div class="card bg-white rounded-3xl p-8 shadow-2xl" onclick="window.location.href='clinica/index.html'">
+                <div class="feature-icon mb-6 text-white">
+                    <span>🏥</span>
+                </div>
+                <h2 class="text-3xl font-bold gradient-text mb-4">Área Clínica</h2>
+                <p class="text-gray-600 mb-6 text-lg">
+                    Aplicación desktop completa para profesionales de la salud dental
+                </p>
+                
+                <div class="space-y-3 mb-8">
+                    <div class="flex items-center text-gray-700">
+                        <span class="mr-3 text-xl">✓</span>
+                        <span>Gestión completa de pacientes</span>
+                    </div>
+                    <div class="flex items-center text-gray-700">
+                        <span class="mr-3 text-xl">✓</span>
+                        <span>Dashboard con estadísticas en tiempo real</span>
+                    </div>
+                    <div class="flex items-center text-gray-700">
+                        <span class="mr-3 text-xl">✓</span>
+                        <span>Formularios de revisión digital</span>
+                    </div>
+                    <div class="flex items-center text-gray-700">
+                        <span class="mr-3 text-xl">✓</span>
+                        <span>Odontograma interactivo</span>
+                    </div>
+                    <div class="flex items-center text-gray-700">
+                        <span class="mr-3 text-xl">✓</span>
+                        <span>Gestión de citas y agenda</span>
+                    </div>
+                </div>
+                
+                <button class="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-4 rounded-xl font-semibold text-lg hover:shadow-xl transition-all">
+                    Acceder al Área Clínica →
+                </button>
+            </div>
+
+            <!-- Family Area -->
+            <div class="card bg-white rounded-3xl p-8 shadow-2xl" onclick="window.location.href='familias/index.html'">
+                <div class="feature-icon mb-6 text-white">
+                    <span>👨‍👩‍👧‍👦</span>
+                </div>
+                <h2 class="text-3xl font-bold gradient-text mb-4">Área Familias</h2>
+                <p class="text-gray-600 mb-6 text-lg">
+                    Portal web/móvil para padres y seguimiento de salud de sus hijos
+                </p>
+                
+                <div class="space-y-3 mb-8">
+                    <div class="flex items-center text-gray-700">
+                        <span class="mr-3 text-xl">✓</span>
+                        <span>Carnet digital interactivo</span>
+                    </div>
+                    <div class="flex items-center text-gray-700">
+                        <span class="mr-3 text-xl">✓</span>
+                        <span>Historial de revisiones</span>
+                    </div>
+                    <div class="flex items-center text-gray-700">
+                        <span class="mr-3 text-xl">✓</span>
+                        <span>Sistema de gamificación</span>
+                    </div>
+                    <div class="flex items-center text-gray-700">
+                        <span class="mr-3 text-xl">✓</span>
+                        <span>Solicitud de citas online</span>
+                    </div>
+                    <div class="flex items-center text-gray-700">
+                        <span class="mr-3 text-xl">✓</span>
+                        <span>Recursos educativos</span>
+                    </div>
+                </div>
+                
+                <button class="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-4 rounded-xl font-semibold text-lg hover:shadow-xl transition-all">
+                    Acceder al Área Familias →
+                </button>
+            </div>
+        </div>
+
+        <!-- Features Overview -->
+        <div class="bg-white/10 backdrop-blur-lg rounded-3xl p-8 shadow-2xl">
+            <h3 class="text-3xl font-bold text-white mb-8 text-center">Características Principales</h3>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="text-center">
+                    <div class="text-4xl mb-4">🔒</div>
+                    <h4 class="text-xl font-semibold text-white mb-2">Seguro y Privado</h4>
+                    <p class="text-white/70">Cumplimiento completo con RGPD y normativas sanitarias</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="text-4xl mb-4">📱</div>
+                    <h4 class="text-xl font-semibold text-white mb-2">Multi-Plataforma</h4>
+                    <p class="text-white/70">Desktop, web y móvil con sincronización en tiempo real</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="text-4xl mb-4">🎯</div>
+                    <h4 class="text-xl font-semibold text-white mb-2">Fácil de Usar</h4>
+                    <p class="text-white/70">Interfaz intuitiva diseñada para profesionales y familias</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="text-4xl mb-4">📊</div>
+                    <h4 class="text-xl font-semibold text-white mb-2">Análisis Avanzado</h4>
+                    <p class="text-white/70">Estadísticas y reportes detallados en tiempo real</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="text-4xl mb-4">🎮</div>
+                    <h4 class="text-xl font-semibold text-white mb-2">Gamificación</h4>
+                    <p class="text-white/70">Sistema de logros que motiva a los niños</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="text-4xl mb-4">⚡</div>
+                    <h4 class="text-xl font-semibold text-white mb-2">Rápido y Eficiente</h4>
+                    <p class="text-white/70">Optimizado para una experiencia fluida</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="mt-12 text-center text-white/60">
+            <p class="mb-2">OMI - Sistema de Gestión de Salud Infantil v1.0.0</p>
+            <p class="text-sm">Demostradores interactivos para evaluación</p>
+        </footer>
+    </div>
+</body>
+</html>

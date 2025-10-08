@@ -23,6 +23,7 @@ demos/
 │   ├── pacientes.html        # Lista de pacientes
 │   ├── ficha-paciente.html   # Ficha completa de paciente
 │   ├── agenda.html           # Sistema de citas
+│   ├── encuestas.html        # Gestión de encuestas
 │   └── estadisticas.html     # Reportes y análisis
 ├── familias/                  # Área Familias (Web/Mobile)
 │   ├── login.html            # Login familias
@@ -30,6 +31,9 @@ demos/
 │   ├── carnet.html           # Carnet digital completo
 │   ├── informes.html         # Historial de revisiones
 │   ├── citas.html            # Solicitud de citas
+│   ├── encuestas.html        # Encuestas disponibles
+│   ├── responder-encuesta.html  # Responder encuestas
+│   ├── consentimiento.html   # Consentimiento informado y RGPD
 │   └── recursos.html         # Recursos educativos
 └── README.md                  # Esta documentación
 ```
@@ -73,6 +77,14 @@ demos/
 - **Planes contratados**: Desglose por tipo de plan
 - **Distribución por edad**: Análisis demográfico
 - **Tendencias mensuales**: Gráficos de evolución
+
+#### 📋 Gestión de Encuestas
+- **Lista de encuestas**: Visualización de todas las encuestas activas y pausadas
+- **Creación de encuestas**: Formulario para definir nuevas encuestas
+- **Categorización**: Organización por tipo (Calidad, Prevención, Clínica, etc.)
+- **Seguimiento de respuestas**: Métricas de participación y progreso
+- **Estados**: Control de encuestas activas, pausadas y finalizadas
+- **Publicación a pacientes**: Asignación de encuestas a grupos de pacientes
 
 ### Credenciales de Acceso
 
@@ -130,6 +142,21 @@ Contraseña: demo123
 - **Búsqueda**: Localización rápida de contenido
 - **Información detallada**: Duración, vistas, valoraciones
 - **Diseño atractivo**: Cards visuales por tipo de recurso
+
+#### 📋 Encuestas
+- **Encuestas disponibles**: Listado de encuestas activas para responder
+- **Responder encuestas**: Interfaz intuitiva con barra de progreso
+- **Tipos de preguntas**: Escala de valoración, sí/no, texto libre
+- **Encuestas completadas**: Historial de encuestas respondidas
+- **Notificaciones**: Alertas de nuevas encuestas disponibles
+
+#### 📄 Consentimiento Informado y Protección de Datos
+- **RGPD completo**: Información detallada sobre protección de datos
+- **Formulario de consentimiento**: Aceptación de términos y condiciones
+- **Firma digital**: Canvas para firma con dedo o ratón
+- **Opciones configurables**: Consentimientos obligatorios y opcionales
+- **Documento legal**: Acceso al texto completo de la política de datos
+- **Validación**: Control de campos requeridos antes de envío
 
 ### Credenciales de Acceso
 

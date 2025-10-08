@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nueva Revisión - OMI Clínica</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="clinica-theme">
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-left">
+                <img src="../assets/logo-placeholder.png" alt="Logo OMI" class="header-logo">
+                <span class="app-title">OMI</span>
+            </div>
+            <div class="header-right">
+                <span class="user-name">Dr. Juan Pérez</span>
+                <div class="header-actions">
+                    <i class="fas fa-user-circle" onclick="showProfileMenu()"></i>
+                    <i class="fas fa-cog" onclick="showSettings()"></i>
+                    <i class="fas fa-bell" onclick="showNotifications()">
+                        <span class="notification-badge">3</span>
+                    </i>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="main-nav">
+            <a href="#" class="nav-item" onclick="navigateTo('dashboard')">
+                <i class="fas fa-home"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="#" class="nav-item active" onclick="navigateTo('pacientes')">
+                <i class="fas fa-users"></i>
+                <span>Pacientes</span>
+            </a>
+            <a href="#" class="nav-item" onclick="navigateTo('agenda')">
+                <i class="fas fa-calendar-alt"></i>
+                <span>Agenda</span>
+            </a>
+            <a href="#" class="nav-item" onclick="navigateTo('estadisticas')">
+                <i class="fas fa-chart-bar"></i>
+                <span>Estadísticas</span>
+            </a>
+            <a href="#" class="nav-item" onclick="navigateTo('config')">
+                <i class="fas fa-cog"></i>
+                <span>Config</span>
+            </a>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-header">
+                <button class="btn-back" onclick="navigateTo('pacientes')">
+                    <i class="fas fa-arrow-left"></i>
+                    Volver a Pacientes
+                </button>
+                <div class="header-actions">
+                    <button class="btn-outline" onclick="saveDraft()">Guardar Borrador</button>
+                </div>
+            </div>
+
+            <div class="revision-container">
+                <div class="revision-header">
+                    <h1>Nueva Revisión</h1>
+                    <p>Carlos Rodríguez (5 años)</p>
+                </div>
+
+                <!-- Progress Tabs -->
+                <div class="progress-tabs">
+                    <div class="tab-item active">
+                        <span class="tab-number">1</span>
+                        <span class="tab-label">Datos Generales</span>
+                    </div>
+                    <div class="tab-item">
+                        <span class="tab-number">2</span>
+                        <span class="tab-label">Exploración</span>
+                    </div>
+                    <div class="tab-item">
+                        <span class="tab-number">3</span>
+                        <span class="tab-label">Higiene</span>
+                    </div>
+                    <div class="tab-item">
+                        <span class="tab-number">4</span>
+                        <span class="tab-label">Tratamientos</span>
+                    </div>
+                    <div class="tab-item">
+                        <span class="tab-number">5</span>
+                        <span class="tab-label">Plan</span>
+                    </div>
+                </div>
+
+                <!-- Tab Content -->
+                <div class="tab-panel active" id="tab1">
+                    <h2>Datos Generales</h2>
+
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="fecha">Fecha de revisión</label>
+                            <input type="date" id="fecha" value="2024-01-15">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="hora">Hora</label>
+                            <input type="time" id="hora" value="10:00">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="tipo">Tipo de revisión</label>
+                            <select id="tipo">
+                                <option value="PREVENTIVA">Preventiva</option>
+                                <option value="SEGUIMIENTO">Seguimiento</option>
+                                <option value="URGENCIA">Urgencia</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="motivo">Motivo de consulta</label>
+                        <textarea id="motivo" rows="3" placeholder="Describe el motivo de la consulta...">Revisión semestral programada</textarea>
+                    </div>
+
+                    <div class="form-actions">
+                        <button class="btn-secondary" onclick="cancelRevision()">Cancelar</button>
+                        <button class="btn-primary" onclick="nextTab(2)">Guardar y Continuar ▶</button>
+                    </div>
+                </div>
+
+                <div class="tab-panel" id="tab2">
+                    <h2>Exploración Clínica</h2>
+
+                    <!-- Odontograma -->
+                    <div class="odontograma-section">
+                        <h3>Odontograma</h3>
+                        <div class="odontograma">
+                            <div class="diente-row">
+                                <div class="diente-number">18</div>
+                                <div class="diente-number">17</div>
+                                <div class="diente-number">16</div>
+                                <div class="diente-number">15</div>
+                                <div class="diente-number">14</div>
+                                <div class="diente-number">13</div>
+                                <div class="diente-number">12</div>
+                                <div class="diente-number">11</div>
+                                <div class="diente-number">21</div>
+                                <div class="diente-number">22</div>
+                                <div class="diente-number">23</div>
+                                <div class="diente-number">24</div>
+                                <div class="diente-number">25</div>
+                                <div class="diente-number">26</div>
+                                <div class="diente-number">27</div>
+                                <div class="diente-number">28</div>
+                            </div>
+
+                            <div class="diente-row dientes">
+                                <div class="diente sano" onclick="toggleDiente(this)" data-diente="18"></div>
+                                <div class="diente sano" onclick="toggleDiente(this)" data-diente="17"></div>
+                                <div class="diente sano" onclick="toggleDiente(this)" data-diente="16"></div>
+                                <div class="diente sano" onclick="toggleDiente(this)" data-diente="15"></div>
+                                <div class="diente sano" onclick="toggleDiente(this)" data-diente="14"></div>
+                                <div class="diente sano" onclick="toggleDiente(this)" data-diente="13"></div>
+                                <div class="diente sano" onclick="toggleDiente(this)" data-diente="12"></div>
+                                <div class="diente sano" onclick="toggleDiente(this)" data-diente="11"></div>
+                                <div class="diente sano" onclick="toggleDiente(this)" data-diente="21"></div>
+                                <div class="diente sano" onclick="toggleDiente(this)" data-diente="22"></div>
+                                <div class="diente sano" onclick="toggleDiente(this)" data-diente="23"></div>
+                                <div class="diente sano" onclick="toggleDiente(this)" data-diente="24"></div>
+                                <div class="diente sano" onclick="toggleDiente(this)" data-diente="25"></div>
+                                <div class="diente sano" onclick="toggleDiente(this)" data-diente="26"></div>
+                                <div class="diente sano" onclick="toggleDiente(this)" data-diente="27"></div>
+                                <div class="diente sano" onclick="toggleDiente(this)" data-diente="28"></div>
+                            </div>
+
+                            <div class="leyenda">
+                                <p><strong>Leyenda:</strong> ✓ Sano | C Caries | O Obturado | S Sellador | X Ausente</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="hallazgos">Hallazgos</label>
+                            <textarea id="hallazgos" rows="3" placeholder="Describe los hallazgos...">Dentición temporal completa. Sin caries. Todas las piezas en buen estado.</textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="tejidos">Tejidos blandos</label>
+                            <select id="tejidos">
+                                <option value="NORMAL">Normal</option>
+                                <option value="INFLAMADO">Inflamado</option>
+                                <option value="OTRO">Otro</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="encias">Estado de encías</label>
+                            <select id="encias">
+                                <option value="SANAS">Sanas</option>
+                                <option value="GINGIVITIS">Gingivitis</option>
+                                <option value="PERIODONTITIS">Periodontitis</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="oclusion">Oclusión</label>
+                            <select id="oclusion">
+                                <option value="CLASE_I">Clase I</option>
+                                <option value="CLASE_II">Clase II</option>
+                                <option value="CLASE_III">Clase III</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button class="btn-secondary" onclick="prevTab(1)">◀ Anterior</button>
+                        <button class="btn-primary" onclick="nextTab(3)">Guardar y Continuar ▶</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consentimiento Informado - OMI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        * { font-family: 'Inter', system-ui, sans-serif; }
+        .signature-pad {
+            border: 2px dashed #cbd5e0;
+            cursor: crosshair;
+            touch-action: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
+            <button onclick="window.location.href='home.html'" class="p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition">
+                <i class="fas fa-arrow-left text-xl"></i>
+            </button>
+            <h1 class="text-lg font-bold text-gray-900">Consentimiento Informado</h1>
+            <div class="w-10"></div>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-6 mb-6">
+        <!-- Logo and Title -->
+        <div class="text-center mb-8">
+            <div class="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg">
+                <span class="text-4xl">🦷</span>
+            </div>
+            <h2 class="text-3xl font-bold text-gray-900 mb-2">Consentimiento Informado</h2>
+            <p class="text-gray-600">y Protección de Datos</p>
+        </div>
+
+        <!-- Tabs -->
+        <div class="flex mb-6 bg-white rounded-xl p-1 shadow-sm">
+            <button onclick="showTab('proteccion')" id="tab-proteccion" class="flex-1 py-3 px-4 rounded-lg font-semibold transition bg-gradient-to-r from-cyan-500 to-blue-600 text-white">
+                Protección de Datos
+            </button>
+            <button onclick="showTab('consentimiento')" id="tab-consentimiento" class="flex-1 py-3 px-4 rounded-lg font-semibold transition text-gray-600 hover:bg-gray-100">
+                Consentimiento
+            </button>
+        </div>
+
+        <!-- Tab Content: Protección de Datos -->
+        <div id="content-proteccion" class="tab-content">
+            <div class="bg-white rounded-2xl p-6 shadow-lg mb-6">
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Ley de Protección de Datos (RGPD)</h3>
+                
+                <div class="prose max-w-none">
+                    <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6 rounded-r-lg">
+                        <p class="text-sm text-blue-900">
+                            <i class="fas fa-info-circle mr-2"></i>
+                            De acuerdo con el Reglamento General de Protección de Datos (RGPD) UE 2016/679, le informamos sobre el tratamiento de sus datos personales.
+                        </p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="border-b border-gray-200 pb-4">
+                            <h4 class="font-bold text-gray-900 mb-2 flex items-center">
+                                <i class="fas fa-building text-cyan-600 mr-3"></i>
+                                Responsable del Tratamiento
+                            </h4>
+                            <p class="text-gray-700 ml-8">
+                                <strong>Clínica Dental [Nombre]</strong><br>
+                                CIF: B-12345678<br>
+                                Dirección: Calle Ejemplo, 123, 28001 Madrid<br>
+                                Email: protecciondatos@clinica.com<br>
+                                Teléfono: +34 900 123 456
+                            </p>
+                        </div>
+
+                        <div class="border-b border-gray-200 pb-4">
+                            <h4 class="font-bold text-gray-900 mb-2 flex items-center">
+                                <i class="fas fa-bullseye text-cyan-600 mr-3"></i>
+                                Finalidad del Tratamiento
+                            </h4>
+                            <ul class="text-gray-700 ml-8 space-y-2">
+                                <li>• Gestión de la historia clínica del paciente</li>
+                                <li>• Prestación de servicios de atención sanitaria</li>
+                                <li>• Seguimiento del Plan de Salud Infantil</li>
+                                <li>• Comunicaciones relacionadas con el tratamiento</li>
+                                <li>• Cumplimiento de obligaciones legales</li>
+                            </ul>
+                        </div>
+
+                        <div class="border-b border-gray-200 pb-4">
+                            <h4 class="font-bold text-gray-900 mb-2 flex items-center">
+                                <i class="fas fa-gavel text-cyan-600 mr-3"></i>
+                                Legitimación
+                            </h4>
+                            <p class="text-gray-700 ml-8">
+                                El tratamiento de datos se basa en el consentimiento del interesado y en el cumplimiento de obligaciones legales en materia de sanidad (Ley 41/2002 de autonomía del paciente).
+                            </p>
+                        </div>
+
+                        <div class="border-b border-gray-200 pb-4">
+                            <h4 class="font-bold text-gray-900 mb-2 flex items-center">
+                                <i class="fas fa-share-alt text-cyan-600 mr-3"></i>
+                                Destinatarios
+                            </h4>
+                            <p class="text-gray-700 ml-8">
+                                Los datos no se cederán a terceros salvo obligación legal o necesidad para la prestación del servicio (laboratorios, aseguradoras según contratación).
+                            </p>
+                        </div>
+
+                        <div class="border-b border-gray-200 pb-4">
+                            <h4 class="font-bold text-gray-900 mb-2 flex items-center">
+                                <i class="fas fa-shield-alt text-cyan-600 mr-3"></i>
+                                Derechos del Interesado
+                            </h4>
+                            <p class="text-gray-700 ml-8 mb-2">Puede ejercer los siguientes derechos:</p>
+                            <ul class="text-gray-700 ml-8 space-y-1">
+                                <li>• <strong>Acceso:</strong> Conocer qué datos tenemos sobre usted</li>
+                                <li>• <strong>Rectificación:</strong> Corregir datos inexactos</li>
+                                <li>• <strong>Supresión:</strong> Solicitar el borrado de datos</li>
+                                <li>• <strong>Portabilidad:</strong> Recibir sus datos en formato electrónico</li>
+                                <li>• <strong>Limitación:</strong> Solicitar limitación del tratamiento</li>
+                                <li>• <strong>Oposición:</strong> Oponerse al tratamiento de datos</li>
+                            </ul>
+                            <p class="text-gray-700 ml-8 mt-2">
+                                Para ejercer estos derechos, contacte con: protecciondatos@clinica.com
+                            </p>
+                        </div>
+
+                        <div>
+                            <h4 class="font-bold text-gray-900 mb-2 flex items-center">
+                                <i class="fas fa-clock text-cyan-600 mr-3"></i>
+                                Conservación de Datos
+                            </h4>
+                            <p class="text-gray-700 ml-8">
+                                Los datos se conservarán durante el tiempo necesario para la prestación del servicio y posteriormente durante los plazos legales establecidos (mínimo 15 años según la legislación sanitaria).
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 text-center">
+                        <button onclick="window.open('#', '_blank')" class="text-cyan-600 hover:text-cyan-800 font-semibold">
+                            <i class="fas fa-file-pdf mr-2"></i>Ver documento completo (PDF)
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab Content: Consentimiento -->
+        <div id="content-consentimiento" class="tab-content hidden">
+            <div class="bg-white rounded-2xl p-6 shadow-lg mb-6">
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Formulario de Consentimiento</h3>
+                
+                <div class="space-y-4 mb-8">
+                    <label class="flex items-start p-4 border-2 border-gray-200 rounded-xl hover:border-cyan-500 cursor-pointer transition">
+                        <input type="checkbox" id="consent1" class="mt-1 w-5 h-5 text-cyan-600 rounded focus:ring-2 focus:ring-cyan-500">
+                        <span class="ml-3 text-gray-700">
+                            <strong class="block mb-1">He leído y acepto la política de protección de datos</strong>
+                            <span class="text-sm text-gray-600">Declaro haber sido informado sobre el tratamiento de mis datos personales conforme al RGPD.</span>
+                        </span>
+                    </label>
+
+                    <label class="flex items-start p-4 border-2 border-gray-200 rounded-xl hover:border-cyan-500 cursor-pointer transition">
+                        <input type="checkbox" id="consent2" class="mt-1 w-5 h-5 text-cyan-600 rounded focus:ring-2 focus:ring-cyan-500">
+                        <span class="ml-3 text-gray-700">
+                            <strong class="block mb-1">Consiento el tratamiento de datos de salud del menor</strong>
+                            <span class="text-sm text-gray-600">Autorizo el tratamiento de datos de salud de mi hijo/a para su atención sanitaria en el marco del Plan de Salud Infantil.</span>
+                        </span>
+                    </label>
+
+                    <label class="flex items-start p-4 border-2 border-gray-200 rounded-xl hover:border-green-500 cursor-pointer transition bg-green-50">
+                        <input type="checkbox" id="consent3" class="mt-1 w-5 h-5 text-green-600 rounded focus:ring-2 focus:ring-green-500">
+                        <span class="ml-3 text-gray-700">
+                            <strong class="block mb-1">Autorizo el envío de comunicaciones (Opcional)</strong>
+                            <span class="text-sm text-gray-600">Acepto recibir recordatorios de citas, consejos de salud bucal y otras comunicaciones relacionadas con el plan de salud.</span>
+                        </span>
+                    </label>
+                </div>
+
+                <!-- Signature Section -->
+                <div class="border-t border-gray-200 pt-6">
+                    <h4 class="text-xl font-bold text-gray-900 mb-4">Firma Digital</h4>
+                    
+                    <div class="mb-4">
+                        <p class="text-sm text-gray-600 mb-2">Firma en el área indicada usando el dedo o el ratón:</p>
+                        <canvas id="signaturePad" class="signature-pad w-full h-48 bg-gray-50 rounded-xl" width="800" height="192"></canvas>
+                    </div>
+                    
+                    <button onclick="clearSignature()" class="text-gray-600 hover:text-gray-900 font-medium text-sm mb-6">
+                        <i class="fas fa-eraser mr-2"></i>Limpiar firma
+                    </button>
+
+                    <div class="bg-gray-50 rounded-xl p-4 space-y-2 text-sm">
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Paciente:</span>
+                            <span class="font-semibold text-gray-900">Carlos Rodríguez</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Tutor legal:</span>
+                            <span class="font-semibold text-gray-900">Ana Rodríguez</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Fecha:</span>
+                            <span class="font-semibold text-gray-900" id="currentDate"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex space-x-4">
+            <button onclick="window.location.href='home.html'" class="flex-1 py-4 bg-gray-200 text-gray-700 font-semibold rounded-xl hover:bg-gray-300 transition">
+                Cancelar
+            </button>
+            <button onclick="submitConsent()" id="submitBtn" class="flex-1 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:shadow-lg transition" disabled>
+                <i class="fas fa-signature mr-2"></i>Firmar y Aceptar
+            </button>
+        </div>
+
+        <!-- Info Alert -->
+        <div class="mt-6 p-4 bg-yellow-50 border border-yellow-200 rounded-xl">
+            <p class="text-sm text-yellow-900">
+                <i class="fas fa-exclamation-triangle mr-2"></i>
+                <strong>Importante:</strong> Al firmar este documento, confirmas que has leído y comprendido toda la información proporcionada y otorgas tu consentimiento expreso para el tratamiento de datos.
+            </p>
+        </div>
+    </main>
+
+    <script>
+        // Initialize date
+        const today = new Date().toLocaleDateString('es-ES', { year: 'numeric', month: '2-digit', day: '2-digit' });
+        document.getElementById('currentDate').textContent = today;
+
+        // Tab switching
+        function showTab(tab) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('[id^="tab-"]').forEach(el => {
+                el.classList.remove('bg-gradient-to-r', 'from-cyan-500', 'to-blue-600', 'text-white');
+                el.classList.add('text-gray-600');
+            });
+            
+            document.getElementById('content-' + tab).classList.remove('hidden');
+            const tabBtn = document.getElementById('tab-' + tab);
+            tabBtn.classList.add('bg-gradient-to-r', 'from-cyan-500', 'to-blue-600', 'text-white');
+            tabBtn.classList.remove('text-gray-600');
+        }
+
+        // Signature pad
+        const canvas = document.getElementById('signaturePad');
+        const ctx = canvas.getContext('2d');
+        let isDrawing = false;
+        let hasSignature = false;
+
+        canvas.addEventListener('mousedown', startDrawing);
+        canvas.addEventListener('mousemove', draw);
+        canvas.addEventListener('mouseup', stopDrawing);
+        canvas.addEventListener('mouseout', stopDrawing);
+        
+        canvas.addEventListener('touchstart', handleTouch);
+        canvas.addEventListener('touchmove', handleTouch);
+        canvas.addEventListener('touchend', stopDrawing);
+
+        function startDrawing(e) {
+            isDrawing = true;
+            const rect = canvas.getBoundingClientRect();
+            ctx.beginPath();
+            ctx.moveTo(e.clientX - rect.left, e.clientY - rect.top);
+        }
+
+        function draw(e) {
+            if (!isDrawing) return;
+            const rect = canvas.getBoundingClientRect();
+            ctx.lineTo(e.clientX - rect.left, e.clientY - rect.top);
+            ctx.strokeStyle = '#1f2937';
+            ctx.lineWidth = 2;
+            ctx.lineCap = 'round';
+            ctx.stroke();
+            hasSignature = true;
+            checkFormComplete();
+        }
+
+        function stopDrawing() {
+            isDrawing = false;
+        }
+
+        function handleTouch(e) {
+            e.preventDefault();
+            const touch = e.touches[0];
+            const mouseEvent = new MouseEvent(e.type === 'touchstart' ? 'mousedown' : e.type === 'touchmove' ? 'mousemove' : 'mouseup', {
+                clientX: touch.clientX,
+                clientY: touch.clientY
+            });
+            canvas.dispatchEvent(mouseEvent);
+        }
+
+        function clearSignature() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            hasSignature = false;
+            checkFormComplete();
+        }
+
+        // Check form completion
+        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('change', checkFormComplete);
+        });
+
+        function checkFormComplete() {
+            const consent1 = document.getElementById('consent1').checked;
+            const consent2 = document.getElementById('consent2').checked;
+            const submitBtn = document.getElementById('submitBtn');
+            
+            if (consent1 && consent2 && hasSignature) {
+                submitBtn.disabled = false;
+                submitBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+            } else {
+                submitBtn.disabled = true;
+                submitBtn.classList.add('opacity-50', 'cursor-not-allowed');
+            }
+        }
+
+        function submitConsent() {
+            // Show success message
+            alert('✅ Consentimiento firmado correctamente\n\nSe ha guardado tu consentimiento informado y la aceptación de la política de protección de datos.');
+            window.location.href = 'home.html';
+        }
+
+        // Initial check
+        checkFormComplete();
+    </script>
+</body>
+</html>

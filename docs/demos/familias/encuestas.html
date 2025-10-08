@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuestas - OMI Familias</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        * { font-family: 'Inter', system-ui, sans-serif; }
+        .survey-card { transition: all 0.3s; }
+        .survey-card:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body class="bg-gray-50 pb-20">
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
+            <button onclick="window.location.href='home.html'" class="p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition">
+                <i class="fas fa-arrow-left text-xl"></i>
+            </button>
+            <h1 class="text-xl font-bold text-gray-900">Encuestas</h1>
+            <div class="w-10"></div>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-6">
+        <!-- New Surveys Section -->
+        <div class="mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Encuestas Disponibles</h2>
+            
+            <!-- Survey 1 -->
+            <div class="survey-card bg-white rounded-2xl p-6 shadow-md mb-4 border-2 border-cyan-200">
+                <div class="flex items-start justify-between mb-4">
+                    <div class="flex-1">
+                        <div class="flex items-center mb-2">
+                            <span class="bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full mr-2">🆕 Nueva</span>
+                            <span class="text-xs text-gray-500">Publicada hace 2 días</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Satisfacción con la Atención Recibida</h3>
+                        <p class="text-gray-600 text-sm mb-3">Queremos conocer tu opinión sobre la calidad de atención en tu última revisión para mejorar nuestro servicio.</p>
+                        
+                        <div class="flex items-center space-x-4 text-sm text-gray-600 mb-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-user text-cyan-600 mr-2"></i>
+                                <span>Para: <strong>Carlos Rodríguez</strong></span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-clock text-cyan-600 mr-2"></i>
+                                <span>~5 minutos</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-list text-cyan-600 mr-2"></i>
+                                <span>3 preguntas</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button onclick="startSurvey(1)" class="w-full py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold rounded-xl hover:shadow-lg transition">
+                    <i class="fas fa-pencil-alt mr-2"></i>Responder Ahora
+                </button>
+            </div>
+
+            <!-- Survey 2 -->
+            <div class="survey-card bg-white rounded-2xl p-6 shadow-md mb-4 border-2 border-green-200">
+                <div class="flex items-start justify-between mb-4">
+                    <div class="flex-1">
+                        <div class="flex items-center mb-2">
+                            <span class="bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full mr-2">🆕 Nueva</span>
+                            <span class="text-xs text-gray-500">Publicada hace 5 días</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Hábitos de Higiene Dental</h3>
+                        <p class="text-gray-600 text-sm mb-3">Ayúdanos a entender los hábitos de higiene dental de tu hijo para personalizar sus cuidados.</p>
+                        
+                        <div class="flex items-center space-x-4 text-sm text-gray-600 mb-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-user text-green-600 mr-2"></i>
+                                <span>Para: <strong>Carlos Rodríguez</strong></span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-clock text-green-600 mr-2"></i>
+                                <span>~3 minutos</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-list text-green-600 mr-2"></i>
+                                <span>5 preguntas</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button onclick="startSurvey(2)" class="w-full py-3 bg-gradient-to-r from-green-500 to-green-600 text-white font-bold rounded-xl hover:shadow-lg transition">
+                    <i class="fas fa-pencil-alt mr-2"></i>Responder Ahora
+                </button>
+            </div>
+        </div>
+
+        <!-- Completed Surveys Section -->
+        <div class="mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Encuestas Completadas</h2>
+            
+            <div class="bg-white rounded-2xl p-6 shadow-md mb-4 opacity-75">
+                <div class="flex items-center justify-between">
+                    <div class="flex-1">
+                        <div class="flex items-center mb-2">
+                            <i class="fas fa-check-circle text-green-600 text-xl mr-2"></i>
+                            <span class="text-green-600 font-bold">Completada</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">Experiencia App Familias</h3>
+                        <p class="text-sm text-gray-600">Completada el: 10/01/2024</p>
+                    </div>
+                    <button class="px-4 py-2 bg-gray-100 text-gray-700 font-semibold rounded-lg hover:bg-gray-200 transition">
+                        <i class="fas fa-eye mr-2"></i>Ver Respuestas
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-md opacity-75">
+                <div class="flex items-center justify-between">
+                    <div class="flex-1">
+                        <div class="flex items-center mb-2">
+                            <i class="fas fa-check-circle text-green-600 text-xl mr-2"></i>
+                            <span class="text-green-600 font-bold">Completada</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">Primera Visita - Feedback</h3>
+                        <p class="text-sm text-gray-600">Completada el: 02/01/2024</p>
+                    </div>
+                    <button class="px-4 py-2 bg-gray-100 text-gray-700 font-semibold rounded-lg hover:bg-gray-200 transition">
+                        <i class="fas fa-eye mr-2"></i>Ver Respuestas
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-lg">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="flex justify-around py-3">
+                <a href="home.html" class="flex flex-col items-center text-gray-600 hover:text-cyan-600 transition">
+                    <i class="fas fa-home text-2xl mb-1"></i>
+                    <span class="text-xs font-medium">Inicio</span>
+                </a>
+                <a href="citas.html" class="flex flex-col items-center text-gray-600 hover:text-cyan-600 transition">
+                    <i class="fas fa-calendar-alt text-2xl mb-1"></i>
+                    <span class="text-xs font-medium">Citas</span>
+                </a>
+                <a href="informes.html" class="flex flex-col items-center text-gray-600 hover:text-cyan-600 transition">
+                    <i class="fas fa-file-medical text-2xl mb-1"></i>
+                    <span class="text-xs font-medium">Informes</span>
+                </a>
+                <a href="encuestas.html" class="flex flex-col items-center text-cyan-600 border-t-3 border-cyan-600 -mt-1 pt-4">
+                    <i class="fas fa-poll text-2xl mb-1"></i>
+                    <span class="text-xs font-medium">Encuestas</span>
+                </a>
+                <a href="recursos.html" class="flex flex-col items-center text-gray-600 hover:text-cyan-600 transition">
+                    <i class="fas fa-graduation-cap text-2xl mb-1"></i>
+                    <span class="text-xs font-medium">Recursos</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        function startSurvey(id) {
+            window.location.href = `responder-encuesta.html?id=${id}`;
+        }
+    </script>
+</body>
+</html>

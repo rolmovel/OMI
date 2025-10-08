@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - OMI Familias</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="familias-theme">
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <img src="../assets/logo-placeholder.png" alt="Logo Clínica" class="clinic-logo">
+                <h1>Bienvenido a OMI</h1>
+                <p>Accede al carnet digital de tus hijos</p>
+            </div>
+
+            <form class="login-form" id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email o Teléfono</label>
+                    <input type="text" id="email" placeholder="Introduce tu email o teléfono" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" placeholder="Introduce tu contraseña" required>
+                </div>
+
+                <button type="submit" class="btn-primary">Iniciar Sesión</button>
+
+                <div class="login-divider">
+                    <span>O</span>
+                </div>
+
+                <div class="alternative-login">
+                    <button type="button" class="btn-secondary" onclick="loginWithPhone()">
+                        <i class="fas fa-mobile-alt"></i>
+                        Con Teléfono
+                    </button>
+
+                    <button type="button" class="btn-secondary" onclick="loginWithQR()">
+                        <i class="fas fa-qrcode"></i>
+                        Escanear QR
+                    </button>
+                </div>
+
+                <a href="#" class="forgot-password">¿Olvidaste contraseña?</a>
+            </form>
+        </div>
+
+        <!-- Información de ayuda -->
+        <div class="help-section">
+            <p>¿No tienes cuenta? Contacta con tu clínica dental.</p>
+            <p>¿Problemas para acceder? <a href="#">Contáctanos</a></p>
+        </div>
+    </div>
+
+    <!-- Modal para login con teléfono -->
+    <div id="phoneModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Login con Teléfono</h2>
+                <span class="close" onclick="closeModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p>Introduce tu número de teléfono para recibir un código de acceso.</p>
+                <div class="form-group">
+                    <label for="phone">Teléfono</label>
+                    <input type="tel" id="phone" placeholder="+34 612 345 678" required>
+                </div>
+                <button class="btn-primary" onclick="sendSMSCode()">Enviar Código</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para escanear QR -->
+    <div id="qrModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Escanear Código QR</h2>
+                <span class="close" onclick="closeModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p>Escanea el código QR proporcionado por tu clínica dental.</p>
+                <div class="qr-placeholder">
+                    <i class="fas fa-qrcode"></i>
+                    <p>Área de escaneo QR</p>
+                </div>
+                <button class="btn-secondary" onclick="simulateQRScan()">Simular Escaneo</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

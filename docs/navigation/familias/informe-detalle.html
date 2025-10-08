@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe de Revisión - OMI Familias</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="familias-theme">
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-left">
+                <button class="btn-back" onclick="goBack()">
+                    <i class="fas fa-arrow-left"></i>
+                    Volver a Informes
+                </button>
+            </div>
+            <div class="header-center">
+                <span class="page-title">Informe de Revisión</span>
+            </div>
+            <div class="header-right">
+                <button class="btn-secondary" onclick="downloadReport()">
+                    <i class="fas fa-download"></i>
+                    Descargar PDF
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="report-container">
+                <!-- Report Header -->
+                <div class="report-header">
+                    <div class="clinic-info">
+                        <img src="../assets/logo-placeholder.png" alt="Logo Clínica" class="clinic-logo">
+                        <div class="clinic-details">
+                            <h2>Clínica Dental Sonrisa</h2>
+                            <p>Calle Dental 123, Madrid</p>
+                            <p>Tel: +34 912 345 678</p>
+                        </div>
+                    </div>
+
+                    <div class="report-meta">
+                        <h1>Informe de Revisión</h1>
+                        <p class="report-date">15 de Enero 2024</p>
+                        <div class="report-number">Informe #REV-2024-001</div>
+                    </div>
+                </div>
+
+                <!-- Patient Information -->
+                <div class="patient-section">
+                    <h2>Paciente</h2>
+                    <div class="patient-info">
+                        <div class="patient-avatar">CR</div>
+                        <div class="patient-details">
+                            <h3>Carlos Rodríguez</h3>
+                            <p>5 años (15/05/2018)</p>
+                            <p>MRN: MRN001</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Professional Information -->
+                <div class="professional-section">
+                    <h2>Profesional</h2>
+                    <div class="professional-info">
+                        <div class="professional-avatar">JP</div>
+                        <div class="professional-details">
+                            <h3>Dr. Juan Pérez</h3>
+                            <p>Odontopediatra</p>
+                            <p>Colegiado: 12345</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Clinical Findings -->
+                <div class="findings-section">
+                    <h2>Hallazgos Clínicos</h2>
+
+                    <div class="findings-grid">
+                        <div class="finding-item">
+                            <h4>Exploración</h4>
+                            <p>Dentición temporal completa. Sin caries. Todas las piezas en buen estado.</p>
+                        </div>
+
+                        <div class="finding-item">
+                            <h4>Tejidos Blandos</h4>
+                            <p>Normal - Encías sanas, sin inflamación.</p>
+                        </div>
+
+                        <div class="finding-item">
+                            <h4>Oclusión</h4>
+                            <p>Clase I - Mordida correcta.</p>
+                        </div>
+
+                        <div class="finding-item">
+                            <h4>Índice de Higiene</h4>
+                            <p>12% - Excelente higiene bucal.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Odontogram -->
+                <div class="odontogram-section">
+                    <h2>Odontograma</h2>
+                    <div class="odontogram-container">
+                        <div class="odontogram-legend">
+                            <p><strong>Leyenda:</strong> ✓ Sano | C Caries | O Obturado | S Sellador | X Ausente</p>
+                        </div>
+                        <div class="odontogram-grid">
+                            <!-- Superior -->
+                            <div class="diente-row">
+                                <div class="diente-label">18</div>
+                                <div class="diente-label">17</div>
+                                <div class="diente-label">16</div>
+                                <div class="diente-label">15</div>
+                                <div class="diente-label">14</div>
+                                <div class="diente-label">13</div>
+                                <div class="diente-label">12</div>
+                                <div class="diente-label">11</div>
+                                <div class="diente-label">21</div>
+                                <div class="diente-label">22</div>
+                                <div class="diente-label">23</div>
+                                <div class="diente-label">24</div>
+                                <div class="diente-label">25</div>
+                                <div class="diente-label">26</div>
+                                <div class="diente-label">27</div>
+                                <div class="diente-label">28</div>
+                            </div>
+
+                            <div class="diente-row dientes">
+                                <div class="diente sano">✓</div>
+                                <div class="diente sano">✓</div>
+                                <div class="diente sano">✓</div>
+                                <div class="diente sano">✓</div>
+                                <div class="diente sano">✓</div>
+                                <div class="diente sano">✓</div>
+                                <div class="diente sano">✓</div>
+                                <div class="diente sano">✓</div>
+                                <div class="diente sano">✓</div>
+                                <div class="diente sano">✓</div>
+                                <div class="diente sano">✓</div>
+                                <div class="diente sano">✓</div>
+                                <div class="diente sano">✓</div>
+                                <div class="diente sano">✓</div>
+                                <div class="diente sano">✓</div>
+                                <div class="diente sano">✓</div>
+                            </div>
+
+                            <!-- Inferior -->
+                            <div class="diente-row">
+                                <div class="diente-label">48</div>
+                                <div class="diente-label">47</div>
+                                <div class="diente-label">46</div>
+                                <div class="diente-label">45</div>
+                                <div class="diente-label">44</div>
+                                <div class="diente-label">43</div>
+                                <div class="diente-label">42</div>
+                                <div class="diente-label">41</div>
+                                <div class="diente-label">31</div>
+                                <div class="diente-label">32</div>
+                                <div class="diente-label">33</div>
+                                <div class="diente-label">34</div>
+                                <div class="diente-label">35</div>
+                                <div class="diente-label">36</div>
+                                <div class="diente-label">37</div>
+                                <div class="diente-label">38</div>
+                            </div>
+
+                            <div class="diente-row dientes">
+                                <div class="diente sano">✓</div>
+                                <div class="diente sano">✓</div>
+                                <div class="diente sano">✓</div>
+                                <div class="diente sano">✓</div>
+                                <div class="diente sano">✓</div>
+                                <div class="diente sano">✓</div>
+                                <div class="diente sano">✓</div>
+                                <div class="diente sano">✓</div>
+                                <div class="diente sano">✓</div>
+                                <div class="diente sano">✓</div>
+                                <div class="diente sano">✓</div>
+                                <div class="diente sano">✓</div>
+                                <div class="diente sano">✓</div>
+                                <div class="diente sano">✓</div>
+                                <div class="diente sano">✓</div>
+                                <div class="diente sano">✓</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recommendations -->
+                <div class="recommendations-section">
+                    <h2>Recomendaciones</h2>
+                    <div class="recommendations-list">
+                        <div class="recommendation-item">
+                            <div class="recommendation-icon">
+                                <i class="fas fa-toothbrush"></i>
+                            </div>
+                            <div class="recommendation-content">
+                                <h4>Higiene Bucal</h4>
+                                <p>Continuar con el cepillado 3 veces al día. Usar hilo dental diariamente.</p>
+                            </div>
+                        </div>
+
+                        <div class="recommendation-item">
+                            <div class="recommendation-icon">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <div class="recommendation-content">
+                                <h4>Próxima Revisión</h4>
+                                <p>Programar próxima revisión en 6 meses (Julio 2024).</p>
+                            </div>
+                        </div>
+
+                        <div class="recommendation-item">
+                            <div class="recommendation-icon">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <div class="recommendation-content">
+                                <h4>Alimentación</h4>
+                                <p>Reducir consumo de azúcares. Priorizar alimentos saludables para los dientes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photos Section -->
+                <div class="photos-section">
+                    <h2>Fotografías Clínicas</h2>
+                    <div class="photos-grid">
+                        <div class="photo-item">
+                            <div class="photo-placeholder">
+                                <i class="fas fa-camera"></i>
+                                <p>Foto Intraoral</p>
+                            </div>
+                        </div>
+                        <div class="photo-item">
+                            <div class="photo-placeholder">
+                                <i class="fas fa-camera"></i>
+                                <p>Radiografía</p>
+                            </div>
+                        </div>
+                        <div class="photo-item">
+                            <div class="photo-placeholder">
+                                <i class="fas fa-camera"></i>
+                                <p>Sonrisa</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Digital Signature -->
+                <div class="signature-section">
+                    <div class="signature-line">
+                        <div class="signature-box">
+                            <p>Firma del Profesional</p>
+                            <div class="signature-placeholder">Dr. Juan Pérez</div>
+                        </div>
+                        <div class="signature-box">
+                            <p>Sello de la Clínica</p>
+                            <div class="signature-placeholder">
+                                <i class="fas fa-stamp"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Report Footer -->
+                <div class="report-footer">
+                    <p>Este informe ha sido generado automáticamente por el sistema OMI.</p>
+                    <p>Fecha de generación: 15 de Enero 2024, 14:30</p>
+                    <p>Clínica Dental Sonrisa - Todos los derechos reservados</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Bottom Navigation (Mobile) -->
+        <nav class="bottom-nav">
+            <a href="#" class="nav-item" onclick="navigateTo('home')">
+                <i class="fas fa-home"></i>
+                <span>Inicio</span>
+            </a>
+            <a href="#" class="nav-item" onclick="navigateTo('citas')">
+                <i class="fas fa-calendar-alt"></i>
+                <span>Citas</span>
+            </a>
+            <a href="#" class="nav-item active" onclick="navigateTo('informes')">
+                <i class="fas fa-file-medical"></i>
+                <span>Informes</span>
+            </a>
+            <a href="#" class="nav-item" onclick="navigateTo('recursos')">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Educación</span>
+            </a>
+            <a href="#" class="nav-item" onclick="navigateTo('carnet')">
+                <i class="fas fa-id-card"></i>
+                <span>Carnet</span>
+            </a>
+        </nav>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

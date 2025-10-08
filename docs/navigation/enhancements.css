@@ -1,0 +1,109 @@
+<!-- Mejoras visuales adicionales para dashboard -->
+
+/* Elementos flotantes decorativos */
+.login-decoration {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.floating-element {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.1);
+    font-size: 2rem;
+    animation: float 6s ease-in-out infinite;
+}
+
+.floating-element:nth-child(2) {
+    animation-delay: -2s;
+}
+
+.floating-element:nth-child(3) {
+    animation-delay: -4s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    33% { transform: translateY(-20px) rotate(5deg); }
+    66% { transform: translateY(10px) rotate(-5deg); }
+}
+
+/* Mejoras en avatares */
+.patient-avatar {
+    position: relative;
+    overflow: hidden;
+}
+
+.patient-avatar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(79, 70, 229, 0.2) 0%, rgba(6, 182, 212, 0.2) 100%);
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+}
+
+.patient-avatar:hover::after {
+    opacity: 1;
+}
+
+/* Animaciones para elementos interactivos */
+.table-row {
+    cursor: pointer;
+    position: relative;
+}
+
+.table-row::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    background: var(--gradient-primary);
+    transition: width var(--transition-normal);
+    z-index: -1;
+}
+
+.table-row:hover::before {
+    width: 4px;
+}
+
+/* Mejoras en formularios */
+.form-group {
+    position: relative;
+}
+
+.form-group input:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.15);
+}
+
+/* Estados mejorados para dientes */
+.diente.sano {
+    background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+    color: white;
+}
+
+.diente.caries {
+    background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%);
+    color: white;
+}
+
+.diente.obturado {
+    background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
+    color: white;
+}
+
+.diente.seleccionado {
+    background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+    transform: scale(1.1);
+    box-shadow: var(--shadow-lg);
+}

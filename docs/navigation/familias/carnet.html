@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carnet Digital - OMI Familias</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="familias-theme">
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-left">
+                <button class="btn-back" onclick="goBack()">
+                    <i class="fas fa-arrow-left"></i>
+                    Volver
+                </button>
+            </div>
+            <div class="header-center">
+                <span class="page-title">Carnet Digital</span>
+            </div>
+            <div class="header-right">
+                <button class="btn-secondary" onclick="shareCarnet()">
+                    <i class="fas fa-share-alt"></i>
+                    Compartir
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="carnet-container">
+                <!-- Carnet Header -->
+                <div class="carnet-header">
+                    <div class="clinic-info">
+                        <img src="../assets/logo-placeholder.png" alt="Logo Clínica" class="clinic-logo">
+                        <div class="clinic-details">
+                            <h2>Clínica Dental Sonrisa</h2>
+                            <p>Plan de Salud Infantil OMI</p>
+                        </div>
+                    </div>
+
+                    <div class="child-photo">
+                        <div class="photo-placeholder">CR</div>
+                    </div>
+                </div>
+
+                <!-- Child Information -->
+                <div class="carnet-content">
+                    <div class="child-info-section">
+                        <h1>Carlos Rodríguez</h1>
+                        <p class="child-details">5 años (15/05/2018)</p>
+                        <p class="child-details">MRN: MRN001</p>
+
+                        <div class="plan-info">
+                            <span class="plan-badge preventivo">Plan: PREVENTIVO</span>
+                            <span class="plan-date">Desde: 01/01/2024</span>
+                        </div>
+                    </div>
+
+                    <!-- Health Status -->
+                    <div class="health-status">
+                        <h2>Estado de Salud</h2>
+                        <div class="status-card good">
+                            <div class="status-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="status-content">
+                                <h3>🟢 Riesgo Bajo</h3>
+                                <p>Tu hijo tiene un excelente estado de salud bucodental</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Next Appointment -->
+                    <div class="appointment-section">
+                        <h2>Próxima Revisión</h2>
+                        <div class="appointment-card">
+                            <div class="appointment-icon">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <div class="appointment-details">
+                                <p class="appointment-date">📅 15 de Julio 2024</p>
+                                <p class="appointment-time">⏰ 10:00 AM</p>
+                            </div>
+                            <div class="appointment-actions">
+                                <button class="btn-primary" onclick="requestAppointment()">Solicitar Cita</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review Stamps -->
+                    <div class="stamps-section">
+                        <h2>Sellos de Revisiones</h2>
+                        <div class="stamps-container">
+                            <div class="stamp">
+                                <div class="stamp-icon">✓</div>
+                                <div class="stamp-date">15/01/24</div>
+                            </div>
+                            <div class="stamp">
+                                <div class="stamp-icon">✓</div>
+                                <div class="stamp-date">10/07/23</div>
+                            </div>
+                            <div class="stamp">
+                                <div class="stamp-icon">✓</div>
+                                <div class="stamp-date">15/01/23</div>
+                            </div>
+                            <div class="stamp empty">
+                                <div class="stamp-icon">+</div>
+                                <div class="stamp-date">Próxima</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Achievements -->
+                    <div class="achievements-section">
+                        <h2>Logros Obtenidos 🏆</h2>
+                        <div class="achievements-container">
+                            <div class="achievement">
+                                <div class="achievement-icon">⭐</div>
+                                <div class="achievement-info">
+                                    <h4>Higiene Bronce</h4>
+                                    <p>Por mantener una excelente higiene bucal</p>
+                                    <span class="achievement-date">Obtenido: 15/01/2024</span>
+                                </div>
+                            </div>
+
+                            <div class="achievement">
+                                <div class="achievement-icon">🥉</div>
+                                <div class="achievement-info">
+                                    <h4>Estrella Asistencia</h4>
+                                    <p>Por asistir puntualmente a las revisiones</p>
+                                    <span class="achievement-date">Obtenido: 10/07/2023</span>
+                                </div>
+                            </div>
+
+                            <div class="achievement locked">
+                                <div class="achievement-icon">🔒</div>
+                                <div class="achievement-info">
+                                    <h4>Higiene Plata</h4>
+                                    <p>Próximo objetivo: Mantener higiene 6 meses</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Statistics -->
+                    <div class="stats-section">
+                        <h2>Estadísticas</h2>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <span class="stat-number">3</span>
+                                <span class="stat-label">Revisiones completadas</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">15.5%</span>
+                                <span class="stat-label">Índice placa promedio</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">0</span>
+                                <span class="stat-label">Caries detectadas</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">95%</span>
+                                <span class="stat-label">Asistencia puntual</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="carnet-actions">
+                        <button class="btn-secondary" onclick="viewHistory()">
+                            <i class="fas fa-history"></i>
+                            Ver Historial Completo
+                        </button>
+                        <button class="btn-outline" onclick="downloadPDF()">
+                            <i class="fas fa-download"></i>
+                            Descargar PDF
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Bottom Navigation (Mobile) -->
+        <nav class="bottom-nav">
+            <a href="#" class="nav-item" onclick="navigateTo('home')">
+                <i class="fas fa-home"></i>
+                <span>Inicio</span>
+            </a>
+            <a href="#" class="nav-item" onclick="navigateTo('citas')">
+                <i class="fas fa-calendar-alt"></i>
+                <span>Citas</span>
+            </a>
+            <a href="#" class="nav-item" onclick="navigateTo('informes')">
+                <i class="fas fa-file-medical"></i>
+                <span>Informes</span>
+            </a>
+            <a href="#" class="nav-item" onclick="navigateTo('recursos')">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Educación</span>
+            </a>
+            <a href="#" class="nav-item active" onclick="navigateTo('carnet')">
+                <i class="fas fa-id-card"></i>
+                <span>Carnet</span>
+            </a>
+        </nav>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

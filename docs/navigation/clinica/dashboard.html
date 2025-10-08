@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - OMI Clínica</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        * {
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+        
+        .stat-card {
+            transition: all 0.3s;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+        }
+        
+        .nav-item {
+            transition: all 0.2s;
+        }
+        
+        .nav-item:hover {
+            background: rgba(79, 70, 229, 0.1);
+        }
+        
+        .nav-item.active {
+            background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+            color: white;
+        }
+        
+        .appointment-card {
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+        
+        .appointment-card:hover {
+            background: #F9FAFB;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+                <div class="w-10 h-10 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-lg flex items-center justify-center">
+                    <span class="text-2xl">🦷</span>
+                </div>
+                <span class="text-xl font-bold text-gray-900">OMI</span>
+            </div>
+            
+            <div class="flex items-center space-x-6">
+                <span class="text-gray-700 font-medium">Dr. Juan Pérez</span>
+                <div class="flex items-center space-x-3">
+                    <button class="relative p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg">
+                        <i class="fas fa-bell text-xl"></i>
+                        <span class="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
+                    </button>
+                    <button class="p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg">
+                        <i class="fas fa-cog text-xl"></i>
+                    </button>
+                    <button class="p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg">
+                        <i class="fas fa-user-circle text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="flex">
+        <!-- Sidebar Navigation -->
+        <aside class="w-64 bg-white border-r border-gray-200 min-h-screen">
+            <nav class="p-4 space-y-2">
+                <a href="dashboard.html" class="nav-item active flex items-center space-x-3 px-4 py-3 rounded-xl">
+                    <i class="fas fa-home text-lg"></i>
+                    <span class="font-medium">Dashboard</span>
+                </a>
+                <a href="pacientes.html" class="nav-item flex items-center space-x-3 px-4 py-3 rounded-xl text-gray-700">
+                    <i class="fas fa-users text-lg"></i>
+                    <span class="font-medium">Pacientes</span>
+                </a>
+                <a href="agenda.html" class="nav-item flex items-center space-x-3 px-4 py-3 rounded-xl text-gray-700">
+                    <i class="fas fa-calendar-alt text-lg"></i>
+                    <span class="font-medium">Agenda</span>
+                </a>
+                <a href="estadisticas.html" class="nav-item flex items-center space-x-3 px-4 py-3 rounded-xl text-gray-700">
+                    <i class="fas fa-chart-bar text-lg"></i>
+                    <span class="font-medium">Estadísticas</span>
+                </a>
+                <a href="#" class="nav-item flex items-center space-x-3 px-4 py-3 rounded-xl text-gray-700">
+                    <i class="fas fa-cog text-lg"></i>
+                    <span class="font-medium">Configuración</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-8">
+            <div class="max-w-7xl mx-auto">
+                <!-- Page Header -->
+                <div class="mb-8">
+                    <h1 class="text-3xl font-bold text-gray-900 mb-2">Dashboard</h1>
+                    <p class="text-gray-600">Resumen de actividad y estadísticas principales</p>
+                </div>
+
+                <!-- Stats Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div class="stat-card bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-users text-blue-600 text-xl"></i>
+                            </div>
+                            <span class="text-sm text-green-600 font-semibold">+12%</span>
+                        </div>
+                        <h3 class="text-3xl font-bold text-gray-900 mb-1">150</h3>
+                        <p class="text-gray-600 font-medium">Pacientes Activos</p>
+                    </div>
+
+                    <div class="stat-card bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-calendar-check text-indigo-600 text-xl"></i>
+                            </div>
+                            <span class="text-sm text-gray-500 font-semibold">Hoy</span>
+                        </div>
+                        <h3 class="text-3xl font-bold text-gray-900 mb-1">12</h3>
+                        <p class="text-gray-600 font-medium">Citas Programadas</p>
+                    </div>
+
+                    <div class="stat-card bg-gradient-to-br from-red-50 to-orange-50 rounded-2xl p-6 shadow-sm border border-red-100">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-exclamation-triangle text-red-600 text-xl"></i>
+                            </div>
+                            <span class="text-sm text-red-600 font-semibold">Alerta</span>
+                        </div>
+                        <h3 class="text-3xl font-bold text-gray-900 mb-1">3</h3>
+                        <p class="text-gray-700 font-medium">Pacientes Riesgo Alto</p>
+                    </div>
+                </div>
+
+                <!-- Risk Distribution -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 mb-8">
+                    <h2 class="text-xl font-bold text-gray-900 mb-6">Distribución por Nivel de Riesgo</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="text-center p-6 bg-green-50 rounded-xl border border-green-200">
+                            <div class="text-4xl mb-3">🟢</div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-1">90</h3>
+                            <p class="text-green-700 font-semibold mb-1">Riesgo Bajo</p>
+                            <p class="text-sm text-gray-600">60% del total</p>
+                        </div>
+                        
+                        <div class="text-center p-6 bg-yellow-50 rounded-xl border border-yellow-200">
+                            <div class="text-4xl mb-3">🟡</div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-1">45</h3>
+                            <p class="text-yellow-700 font-semibold mb-1">Riesgo Medio</p>
+                            <p class="text-sm text-gray-600">30% del total</p>
+                        </div>
+                        
+                        <div class="text-center p-6 bg-red-50 rounded-xl border border-red-200">
+                            <div class="text-4xl mb-3">🔴</div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-1">15</h3>
+                            <p class="text-red-700 font-semibold mb-1">Riesgo Alto</p>
+                            <p class="text-sm text-gray-600">10% del total</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Today's Appointments -->
+                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+                        <div class="flex items-center justify-between mb-6">
+                            <h2 class="text-xl font-bold text-gray-900">Agenda de Hoy</h2>
+                            <a href="agenda.html" class="text-indigo-600 hover:text-indigo-800 font-medium text-sm">
+                                Ver todas →
+                            </a>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <div class="appointment-card p-4 border border-gray-100 rounded-xl">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="font-semibold text-gray-900">09:00</span>
+                                    <span class="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-semibold rounded-full">Preventiva</span>
+                                </div>
+                                <p class="text-gray-900 font-medium">Carlos Rodríguez (5 años)</p>
+                                <button class="mt-3 text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                    Ver ficha →
+                                </button>
+                            </div>
+                            
+                            <div class="appointment-card p-4 border border-gray-100 rounded-xl">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="font-semibold text-gray-900">09:30</span>
+                                    <span class="px-3 py-1 bg-yellow-100 text-yellow-700 text-xs font-semibold rounded-full">Seguimiento HIM</span>
+                                </div>
+                                <p class="text-gray-900 font-medium">María García (8 años)</p>
+                                <button class="mt-3 text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                    Ver ficha →
+                                </button>
+                            </div>
+                            
+                            <div class="appointment-card p-4 border border-gray-100 rounded-xl">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="font-semibold text-gray-900">10:00</span>
+                                    <span class="px-3 py-1 bg-purple-100 text-purple-700 text-xs font-semibold rounded-full">Selladores</span>
+                                </div>
+                                <p class="text-gray-900 font-medium">Luis Martínez (6 años)</p>
+                                <button class="mt-3 text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                                    Ver ficha →
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pending Reviews -->
+                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+                        <div class="flex items-center justify-between mb-6">
+                            <h2 class="text-xl font-bold text-gray-900">Revisiones Pendientes</h2>
+                            <span class="px-3 py-1 bg-orange-100 text-orange-700 text-xs font-semibold rounded-full">5 urgentes</span>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <div class="p-4 bg-red-50 border border-red-200 rounded-xl">
+                                <div class="flex items-start justify-between mb-2">
+                                    <div>
+                                        <p class="font-semibold text-gray-900">Pedro Sánchez</p>
+                                        <p class="text-sm text-gray-600">Revisión vencida hace 15 días</p>
+                                    </div>
+                                    <i class="fas fa-exclamation-circle text-red-500"></i>
+                                </div>
+                                <button class="mt-2 px-4 py-2 bg-red-600 text-white text-sm font-medium rounded-lg hover:bg-red-700">
+                                    Contactar
+                                </button>
+                            </div>
+                            
+                            <div class="p-4 bg-orange-50 border border-orange-200 rounded-xl">
+                                <div class="flex items-start justify-between mb-2">
+                                    <div>
+                                        <p class="font-semibold text-gray-900">Laura Torres</p>
+                                        <p class="text-sm text-gray-600">Revisión vencida hace 8 días</p>
+                                    </div>
+                                    <i class="fas fa-exclamation-circle text-orange-500"></i>
+                                </div>
+                                <button class="mt-2 px-4 py-2 bg-orange-600 text-white text-sm font-medium rounded-lg hover:bg-orange-700">
+                                    Contactar
+                                </button>
+                            </div>
+                            
+                            <div class="p-4 bg-blue-50 border border-blue-200 rounded-xl">
+                                <div class="flex items-start justify-between mb-2">
+                                    <div>
+                                        <p class="font-semibold text-gray-900">Juan Ruiz</p>
+                                        <p class="text-sm text-gray-600">Revisión próxima en 3 días</p>
+                                    </div>
+                                    <i class="fas fa-calendar text-blue-500"></i>
+                                </div>
+                                <button class="mt-2 px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700">
+                                    Ver ficha
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Add interactivity
+        document.querySelectorAll('.appointment-card').forEach(card => {
+            card.addEventListener('click', function() {
+                window.location.href = 'pacientes.html';
+            });
+        });
+    </script>
+</body>
+</html>

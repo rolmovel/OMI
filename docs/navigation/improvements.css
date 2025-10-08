@@ -1,0 +1,273 @@
+/* Mejoras de Maquetación y Visuales para OMI */
+
+:root {
+    /* Nuevas variables para mejor apariencia */
+    --gradient-primary: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+    --gradient-secondary: linear-gradient(135deg, #06B6D4 0%, #0891B2 100%);
+    --gradient-success: linear-gradient(135deg, #10B981 0%, #059669 100%);
+    --gradient-warning: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+    --gradient-danger: linear-gradient(135deg, #EF4444 0%, #DC2626 100%);
+
+    /* Sombras mejoradas */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+    /* Animaciones */
+    --transition-fast: 150ms ease-in-out;
+    --transition-normal: 250ms ease-in-out;
+    --transition-slow: 350ms ease-in-out;
+}
+
+/* Mejoras generales */
+.clinica-theme, .familias-theme {
+    font-family: var(--font-family);
+    line-height: 1.6;
+}
+
+/* Header mejorado */
+.app-header {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+    backdrop-filter: blur(10px);
+}
+
+.header-left {
+    gap: var(--spacing-lg);
+}
+
+.header-logo {
+    height: 36px;
+    width: auto;
+    border-radius: var(--border-radius-sm);
+    box-shadow: var(--shadow-sm);
+}
+
+.header-right {
+    gap: var(--spacing-xl);
+}
+
+.user-name {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: var(--font-size-lg);
+}
+
+/* Navegación mejorada */
+.main-nav {
+    background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    border-right: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+}
+
+.nav-item {
+    position: relative;
+    transition: all var(--transition-normal);
+    border-radius: var(--border-radius-md);
+    margin: var(--spacing-xs) var(--spacing-sm);
+}
+
+.nav-item:hover {
+    transform: translateX(4px);
+    box-shadow: var(--shadow-md);
+}
+
+.nav-item.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 60%;
+    background: var(--primary-color);
+    border-radius: 0 2px 2px 0;
+}
+
+/* Tarjetas mejoradas */
+.stat-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border-radius: var(--border-radius-xl);
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+}
+
+.stat-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: var(--border-radius-xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    background: var(--gradient-primary);
+    color: white;
+    box-shadow: var(--shadow-md);
+}
+
+/* Tabla de pacientes mejorada */
+.patients-table {
+    background: var(--bg-primary);
+    border-radius: var(--border-radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.table-header {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    padding: var(--spacing-lg);
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.table-row {
+    transition: all var(--transition-normal);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.table-row:hover {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 20%);
+    transform: scale(1.01);
+}
+
+/* Avatares mejorados */
+.patient-avatar, .patient-avatar-large {
+    background: var(--gradient-primary);
+    color: white;
+    font-weight: 700;
+    font-size: var(--font-size-lg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-md);
+    border: 3px solid white;
+}
+
+.patient-avatar-large {
+    width: 80px;
+    height: 80px;
+    font-size: var(--font-size-2xl);
+}
+
+/* Formularios mejorados */
+.form-group input, .form-group select, .form-group textarea {
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-md) var(--spacing-lg);
+    transition: all var(--transition-normal);
+    background: var(--bg-primary);
+}
+
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+    transform: translateY(-1px);
+}
+
+/* Botones con gradientes */
+.btn-primary {
+    background: var(--gradient-primary);
+    border: none;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-secondary {
+    background: var(--gradient-secondary);
+    border: none;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal);
+}
+
+.btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Login mejorado */
+.login-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-xl);
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+}
+
+.clinic-logo {
+    height: 80px;
+    width: auto;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+/* Mejoras responsive */
+@media (max-width: 768px) {
+    .stat-card {
+        padding: var(--spacing-lg);
+    }
+
+    .stat-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 1.25rem;
+    }
+
+    .patient-avatar-large {
+        width: 60px;
+        height: 60px;
+        font-size: var(--font-size-xl);
+    }
+
+    .login-card {
+        margin: var(--spacing-lg);
+        padding: var(--spacing-xl);
+    }
+}
+
+/* Animaciones sutiles */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-out;
+}
+
+.slide-in {
+    animation: slideIn 0.3s ease-out;
+}
+
+/* Aplicar animaciones */
+.stat-card, .patient-card, .login-card {
+    animation: fadeIn 0.6s ease-out;
+}
+
+.main-nav {
+    animation: slideIn 0.4s ease-out;
+}

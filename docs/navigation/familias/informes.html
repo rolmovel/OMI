@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informes - OMI Familias</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="familias-theme">
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-left">
+                <button class="btn-back" onclick="goBack()">
+                    <i class="fas fa-arrow-left"></i>
+                    Volver
+                </button>
+            </div>
+            <div class="header-center">
+                <span class="page-title">Informes de Revisión</span>
+            </div>
+            <div class="header-right">
+                <span class="child-selector">
+                    <select id="childSelect" onchange="changeChild()">
+                        <option value="carlos">Carlos Rodríguez</option>
+                        <option value="maria">María Rodríguez</option>
+                    </select>
+                </span>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="reports-container">
+                <!-- New Report Alert -->
+                <div class="alert-card new-report">
+                    <div class="alert-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="alert-content">
+                        <h3>🆕 Nuevo Informe Disponible</h3>
+                        <p>Revisión Preventiva de Carlos - 15 de Enero 2024</p>
+                        <p>Dr. Juan Pérez</p>
+                    </div>
+                    <div class="alert-actions">
+                        <button class="btn-primary" onclick="viewReport('new')">Ver Informe</button>
+                    </div>
+                </div>
+
+                <!-- Reports List -->
+                <div class="reports-list">
+                    <div class="report-item" onclick="viewReport('report1')">
+                        <div class="report-icon">
+                            <i class="fas fa-file-medical"></i>
+                        </div>
+                        <div class="report-content">
+                            <h4>Revisión Preventiva</h4>
+                            <p class="report-details">15 de Enero 2024 • Dr. Juan Pérez</p>
+                            <p class="report-summary">Excelente estado de salud bucodental. Índice de placa: 12%. Sin caries.</p>
+                        </div>
+                        <div class="report-actions">
+                            <button class="btn-secondary" onclick="event.stopPropagation(); viewReport('report1')">Ver</button>
+                            <button class="btn-outline" onclick="event.stopPropagation(); downloadReport('report1')">Descargar</button>
+                        </div>
+                    </div>
+
+                    <div class="report-item" onclick="viewReport('report2')">
+                        <div class="report-icon">
+                            <i class="fas fa-file-medical"></i>
+                        </div>
+                        <div class="report-content">
+                            <h4>Revisión Preventiva</h4>
+                            <p class="report-details">10 de Julio 2023 • Dr. Juan Pérez</p>
+                            <p class="report-summary">Buen estado general. Recomendaciones de higiene reforzadas.</p>
+                        </div>
+                        <div class="report-actions">
+                            <button class="btn-secondary" onclick="event.stopPropagation(); viewReport('report2')">Ver</button>
+                            <button class="btn-outline" onclick="event.stopPropagation(); downloadReport('report2')">Descargar</button>
+                        </div>
+                    </div>
+
+                    <div class="report-item" onclick="viewReport('report3')">
+                        <div class="report-icon">
+                            <i class="fas fa-file-medical"></i>
+                        </div>
+                        <div class="report-content">
+                            <h4>Primera Revisión</h4>
+                            <p class="report-details">15 de Enero 2023 • Dr. Juan Pérez</p>
+                            <p class="report-summary">Inicio del plan preventivo. Dentición temporal completa.</p>
+                        </div>
+                        <div class="report-actions">
+                            <button class="btn-secondary" onclick="event.stopPropagation(); viewReport('report3')">Ver</button>
+                            <button class="btn-outline" onclick="event.stopPropagation(); downloadReport('report3')">Descargar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Report Categories -->
+                <div class="report-categories">
+                    <h2>Informes por Categoría</h2>
+                    <div class="categories-grid">
+                        <div class="category-card" onclick="filterReports('preventivas')">
+                            <div class="category-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h3>Preventivas</h3>
+                            <p>Revisiones regulares de control</p>
+                            <span class="category-count">3 informes</span>
+                        </div>
+
+                        <div class="category-card" onclick="filterReports('urgencias')">
+                            <div class="category-icon">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <h3>Urgencias</h3>
+                            <p>Consultas no programadas</p>
+                            <span class="category-count">0 informes</span>
+                        </div>
+
+                        <div class="category-card" onclick="filterReports('seguimiento')">
+                            <div class="category-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3>Seguimiento</h3>
+                            <p>Evolución y tratamientos</p>
+                            <span class="category-count">0 informes</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Health Evolution -->
+                <div class="evolution-section">
+                    <h2>Evolución de Salud</h2>
+                    <div class="evolution-chart">
+                        <div class="evolution-item">
+                            <div class="evolution-date">Ene 2024</div>
+                            <div class="evolution-bar" style="height: 85%">
+                                <span class="evolution-value">85%</span>
+                            </div>
+                            <div class="evolution-label">Excelente</div>
+                        </div>
+
+                        <div class="evolution-item">
+                            <div class="evolution-date">Jul 2023</div>
+                            <div class="evolution-bar" style="height: 78%">
+                                <span class="evolution-value">78%</span>
+                            </div>
+                            <div class="evolution-label">Bueno</div>
+                        </div>
+
+                        <div class="evolution-item">
+                            <div class="evolution-date">Ene 2023</div>
+                            <div class="evolution-bar" style="height: 90%">
+                                <span class="evolution-value">90%</span>
+                            </div>
+                            <div class="evolution-label">Excelente</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Bottom Navigation (Mobile) -->
+        <nav class="bottom-nav">
+            <a href="#" class="nav-item" onclick="navigateTo('home')">
+                <i class="fas fa-home"></i>
+                <span>Inicio</span>
+            </a>
+            <a href="#" class="nav-item" onclick="navigateTo('citas')">
+                <i class="fas fa-calendar-alt"></i>
+                <span>Citas</span>
+            </a>
+            <a href="#" class="nav-item active" onclick="navigateTo('informes')">
+                <i class="fas fa-file-medical"></i>
+                <span>Informes</span>
+            </a>
+            <a href="#" class="nav-item" onclick="navigateTo('recursos')">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Educación</span>
+            </a>
+            <a href="#" class="nav-item" onclick="navigateTo('carnet')">
+                <i class="fas fa-id-card"></i>
+                <span>Carnet</span>
+            </a>
+        </nav>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
