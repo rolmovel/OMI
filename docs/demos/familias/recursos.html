@@ -218,29 +218,26 @@
                 <button onclick="window.location.href='home.html'" class="flex flex-col items-center py-2 px-4 text-gray-600">
                     <i class="fas fa-home text-xl mb-1"></i>
                     <span class="text-xs font-semibold">Inicio</span>
-                </button>
-                <button onclick="window.location.href='citas.html'" class="flex flex-col items-center py-2 px-4 text-gray-600">
                     <i class="fas fa-calendar text-xl mb-1"></i>
                     <span class="text-xs font-semibold">Citas</span>
                 </button>
-                <button onclick="window.location.href='informes.html'" class="flex flex-col items-center py-2 px-4 text-gray-600">
+                <button onclick="window.location.href='informes.html'" class="nav-btn flex flex-col items-center py-2 px-4 text-gray-600">
                     <i class="fas fa-file-alt text-xl mb-1"></i>
                     <span class="text-xs font-semibold">Informes</span>
+                </button>
+                <button onclick="window.location.href='encuestas.html'" class="nav-btn flex flex-col items-center py-2 px-4 text-gray-600">
+                    <i class="fas fa-poll text-xl mb-1"></i>
+                    <span class="text-xs font-semibold">Encuestas</span>
                 </button>
                 <button class="nav-btn active flex flex-col items-center py-2 px-4 text-gray-600">
                     <i class="fas fa-book text-xl mb-1"></i>
                     <span class="text-xs font-semibold">Recursos</span>
-                </button>
-                <button class="flex flex-col items-center py-2 px-4 text-gray-600">
-                    <i class="fas fa-user text-xl mb-1"></i>
-                    <span class="text-xs font-semibold">Perfil</span>
                 </button>
             </div>
         </div>
     </nav>
 
     <script>
-        document.querySelectorAll('.category-btn').forEach(btn => {
             btn.addEventListener('click', function() {
                 document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
                 this.classList.add('active');
