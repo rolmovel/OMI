@@ -1,4 +1,4 @@
-package com.omi.servicediscovery;
+package com.omi.discovery;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

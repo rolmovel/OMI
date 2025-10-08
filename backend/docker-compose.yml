@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: omi-postgres
+    environment:
+      POSTGRES_USER: omi
+      POSTGRES_PASSWORD: omi_password
+      POSTGRES_DB: auth_db # Se crea una DB inicial, pero el script crea el resto
+    volumes:
+      - ./init-databases.sql:/docker-entrypoint-initdb.d/init-databases.sql
+    ports:
+      - "5432:5432"
+    networks:
+      - omi-network
+
+  service-discovery:
+    build:
+      context: ./service-discovery
+    container_name: omi-service-discovery
+    ports:
+      - "8761:8761"
+    networks:
+      - omi-network
+
+  auth-service:
+    build:
+      context: ./auth-service
+    container_name: omi-auth-service
+    depends_on:
+      - postgres
+      - service-discovery
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - DB_USERNAME=omi
+      - DB_PASSWORD=omi_password
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://service-discovery:8761/eureka/
+    ports:
+      - "8081:8081"
+    networks:
+      - omi-network
+
+networks:
+  omi-network:
+    driver: bridge
