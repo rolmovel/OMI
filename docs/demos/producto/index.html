@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OMI - Nuestro Producto | Sistema de Gestión de Salud Infantil</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap">
+    <style>
+        * {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px) scale(1.02);
+        }
+
+        .icon-wrapper {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .floating-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .benefit-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 100%);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-4">
+                    <div class="w-10 h-10 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-xl flex items-center justify-center">
+                        <span class="text-white text-xl">🦷</span>
+                    </div>
+                    <span class="text-xl font-bold gradient-text">OMI</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#producto" class="text-gray-700 hover:text-indigo-600 transition-colors">Producto</a>
+                    <a href="#beneficios" class="text-gray-700 hover:text-indigo-600 transition-colors">Beneficios</a>
+                    <a href="#caracteristicas" class="text-gray-700 hover:text-indigo-600 transition-colors">Características</a>
+                    <a href="#tecnologia" class="text-gray-700 hover:text-indigo-600 transition-colors">Tecnología</a>
+                    <a href="../index.html" class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-4 py-2 rounded-lg hover:shadow-lg transition-all">
+                        ← Volver
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient min-h-screen flex items-center relative overflow-hidden">
+        <div class="absolute inset-0">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-white/10 rounded-full blur-3xl floating-animation"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-purple-300/20 rounded-full blur-3xl floating-animation" style="animation-delay: -2s;"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="text-white space-y-8">
+                    <div class="space-y-4">
+                        <h1 class="text-5xl lg:text-7xl font-black leading-tight">
+                            OMI
+                            <span class="block gradient-text">Producto</span>
+                        </h1>
+                        <p class="text-xl lg:text-2xl text-white/90 leading-relaxed">
+                            Sistema integral de gestión de salud infantil que transforma la experiencia dental mediante tecnología innovadora
+                        </p>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="bg-white text-indigo-600 px-8 py-4 rounded-xl font-bold text-lg hover:shadow-2xl transition-all transform hover:scale-105">
+                            <i class="fas fa-play mr-2"></i>Ver Demo
+                        </button>
+                        <button class="border-2 border-white text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white hover:text-indigo-600 transition-all">
+                            <i class="fas fa-download mr-2"></i>Descargar Brochure
+                        </button>
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-8 pt-8">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-white">500+</div>
+                            <div class="text-white/80 text-sm">Clínicas</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-white">50K+</div>
+                            <div class="text-white/80 text-sm">Pacientes</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-white">99.9%</div>
+                            <div class="text-white/80 text-sm">Uptime</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="bg-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white/20">
+                        <div class="bg-white rounded-2xl p-6 shadow-2xl">
+                            <div class="text-center mb-6">
+                                <div class="w-20 h-20 bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-full mx-auto flex items-center justify-center mb-4">
+                                    <i class="fas fa-tooth text-white text-3xl"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold text-gray-800">Odontograma Digital</h3>
+                            </div>
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                                    <span class="text-sm font-medium">Estado General</span>
+                                    <div class="flex space-x-1">
+                                        <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                                        <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                                        <div class="w-2 h-2 bg-yellow-400 rounded-full"></div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                                    <span class="text-sm font-medium">Tratamientos</span>
+                                    <span class="text-sm text-green-600 font-semibold">3 Activos</span>
+                                </div>
+                                <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                                    <span class="text-sm font-medium">Próxima Cita</span>
+                                    <span class="text-sm text-blue-600 font-semibold">15 Dic</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute -top-4 -right-4 w-24 h-24 bg-yellow-400 rounded-full flex items-center justify-center shadow-lg floating-animation">
+                        <i class="fas fa-star text-white text-2xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Overview -->
+    <section id="producto" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-black text-gray-900 mb-6">
+                    Nuestro <span class="gradient-text">Producto</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                    OMI es una solución completa que digitaliza y optimiza todos los procesos de gestión dental infantil,
+                    desde la primera consulta hasta el seguimiento continuo del paciente.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="card-hover benefit-card rounded-3xl p-8 shadow-xl border border-white/50">
+                    <div class="icon-wrapper w-16 h-16 rounded-2xl flex items-center justify-center mb-6 text-white">
+                        <i class="fas fa-heart text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Para Pacientes</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Experiencia dental amigable y educativa que reduce el miedo y promueve hábitos saludables desde la infancia.
+                    </p>
+                </div>
+
+                <div class="card-hover benefit-card rounded-3xl p-8 shadow-xl border border-white/50">
+                    <div class="icon-wrapper w-16 h-16 rounded-2xl flex items-center justify-center mb-6 text-white">
+                        <i class="fas fa-building text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Para Clínicas</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Herramientas avanzadas de gestión que optimizan procesos y mejoran la atención al paciente.
+                    </p>
+                </div>
+
+                <div class="card-hover benefit-card rounded-3xl p-8 shadow-xl border border-white/50">
+                    <div class="icon-wrapper w-16 h-16 rounded-2xl flex items-center justify-center mb-6 text-white">
+                        <i class="fas fa-users text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Para Familias</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Comunicación fluida y participación activa en el cuidado dental de sus hijos.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="beneficios" class="py-20 bg-gradient-to-br from-indigo-50 to-purple-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-black text-gray-900 mb-6">
+                    Beneficios <span class="gradient-text">Excepcionales</span>
+                </h2>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Patient Benefits -->
+                <div class="space-y-8">
+                    <div class="flex items-center mb-8">
+                        <div class="icon-wrapper w-14 h-14 rounded-2xl flex items-center justify-center mr-6 text-white">
+                            <i class="fas fa-child text-2xl"></i>
+                        </div>
+                        <h3 class="text-3xl font-bold text-indigo-600">Para Pacientes</h3>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start p-6 bg-white rounded-2xl shadow-lg border border-indigo-100">
+                            <div class="icon-wrapper w-12 h-12 rounded-xl flex items-center justify-center mr-4 text-white flex-shrink-0">
+                                <i class="fas fa-smile text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-2">Experiencia Sin Miedo</h4>
+                                <p class="text-gray-600">Interfaces amigables y elementos de gamificación que hacen la visita dental divertida y educativa.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start p-6 bg-white rounded-2xl shadow-lg border border-indigo-100">
+                            <div class="icon-wrapper w-12 h-12 rounded-xl flex items-center justify-center mr-4 text-white flex-shrink-0">
+                                <i class="fas fa-chart-line text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-2">Seguimiento Completo</h4>
+                                <p class="text-gray-600">Historial médico visual e interactivo con gráficos de evolución y recomendaciones personalizadas.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start p-6 bg-white rounded-2xl shadow-lg border border-indigo-100">
+                            <div class="icon-wrapper w-12 h-12 rounded-xl flex items-center justify-center mr-4 text-white flex-shrink-0">
+                                <i class="fas fa-graduation-cap text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-2">Educación Continua</h4>
+                                <p class="text-gray-600">Contenido educativo adaptado a la edad con tips personalizados para mejorar hábitos de higiene.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Clinic Benefits -->
+                <div class="space-y-8">
+                    <div class="flex items-center mb-8">
+                        <div class="icon-wrapper w-14 h-14 rounded-2xl flex items-center justify-center mr-6 text-white">
+                            <i class="fas fa-stethoscope text-2xl"></i>
+                        </div>
+                        <h3 class="text-3xl font-bold text-purple-600">Para Clínicas</h3>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start p-6 bg-white rounded-2xl shadow-lg border border-purple-100">
+                            <div class="icon-wrapper w-12 h-12 rounded-xl flex items-center justify-center mr-4 text-white flex-shrink-0">
+                                <i class="fas fa-tachometer-alt text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-2">Dashboard Inteligente</h4>
+                                <p class="text-gray-600">Métricas en tiempo real, análisis de rendimiento y KPIs personalizables para toma de decisiones.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start p-6 bg-white rounded-2xl shadow-lg border border-purple-100">
+                            <div class="icon-wrapper w-12 h-12 rounded-xl flex items-center justify-center mr-4 text-white flex-shrink-0">
+                                <i class="fas fa-tooth text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-2">Odontograma Avanzado</h4>
+                                <p class="text-gray-600">Herramientas digitales precisas para diagnóstico, planificación y seguimiento de tratamientos.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start p-6 bg-white rounded-2xl shadow-lg border border-purple-100">
+                            <div class="icon-wrapper w-12 h-12 rounded-xl flex items-center justify-center mr-4 text-white flex-shrink-0">
+                                <i class="fas fa-calendar-check text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-2">Gestión de Citas</h4>
+                                <p class="text-gray-600">Sistema automatizado con recordatorios inteligentes y gestión eficiente de la disponibilidad.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="caracteristicas" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-black text-gray-900 mb-6">
+                    Características <span class="gradient-text">Destacadas</span>
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card-hover bg-gradient-to-br from-emerald-50 to-teal-50 rounded-3xl p-8 shadow-xl border border-emerald-100">
+                    <div class="icon-wrapper w-16 h-16 rounded-2xl flex items-center justify-center mb-6 text-white">
+                        <i class="fas fa-brain text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Inteligencia Artificial</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Algoritmos predictivos para prevención temprana y recomendaciones personalizadas basadas en datos.
+                    </p>
+                </div>
+
+                <div class="card-hover bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl p-8 shadow-xl border border-blue-100">
+                    <div class="icon-wrapper w-16 h-16 rounded-2xl flex items-center justify-center mb-6 text-white">
+                        <i class="fas fa-shield-alt text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Seguridad Total</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Cumplimiento RGPD, encriptación de datos y estándares sanitarios para máxima protección.
+                    </p>
+                </div>
+
+                <div class="card-hover bg-gradient-to-br from-purple-50 to-pink-50 rounded-3xl p-8 shadow-xl border border-purple-100">
+                    <div class="icon-wrapper w-16 h-16 rounded-2xl flex items-center justify-center mb-6 text-white">
+                        <i class="fas fa-mobile-alt text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Multiplataforma</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Acceso desde cualquier dispositivo con sincronización perfecta entre desktop, web y móvil.
+                    </p>
+                </div>
+
+                <div class="card-hover bg-gradient-to-br from-yellow-50 to-orange-50 rounded-3xl p-8 shadow-xl border border-yellow-100">
+                    <div class="icon-wrapper w-16 h-16 rounded-2xl flex items-center justify-center mb-6 text-white">
+                        <i class="fas fa-chart-bar text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Reportes Avanzados</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Generación automática de informes clínicos, estadísticas y análisis para mejorar procesos.
+                    </p>
+                </div>
+
+                <div class="card-hover bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-8 shadow-xl border border-green-100">
+                    <div class="icon-wrapper w-16 h-16 rounded-2xl flex items-center justify-center mb-6 text-white">
+                        <i class="fas fa-link text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Interoperabilidad</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Integración perfecta con sistemas existentes mediante estándares HL7 y APIs modernas.
+                    </p>
+                </div>
+
+                <div class="card-hover bg-gradient-to-br from-indigo-50 to-blue-50 rounded-3xl p-8 shadow-xl border border-indigo-100">
+                    <div class="icon-wrapper w-16 h-16 rounded-2xl flex items-center justify-center mb-6 text-white">
+                        <i class="fas fa-expand-arrows-alt text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Escalabilidad</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Arquitectura preparada para crecimiento con alta disponibilidad y rendimiento optimizado.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section id="tecnologia" class="py-20 bg-gradient-to-br from-gray-900 to-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-black text-white mb-6">
+                    Stack <span class="gradient-text">Tecnológico</span>
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white/20">
+                    <div class="icon-wrapper w-14 h-14 rounded-2xl flex items-center justify-center mb-6 text-white">
+                        <i class="fas fa-desktop text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-6">Frontend</h3>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-3"></i>React + TypeScript</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-3"></i>Tailwind CSS</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-3"></i>Tauri (Desktop)</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-3"></i>PWA Technology</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white/20">
+                    <div class="icon-wrapper w-14 h-14 rounded-2xl flex items-center justify-center mb-6 text-white">
+                        <i class="fas fa-server text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-6">Backend</h3>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-3"></i>Spring Boot</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-3"></i>PostgreSQL</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-3"></i>Redis Cache</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-3"></i>JWT Security</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white/20">
+                    <div class="icon-wrapper w-14 h-14 rounded-2xl flex items-center justify-center mb-6 text-white">
+                        <i class="fas fa-cloud text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-6">DevOps</h3>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-3"></i>Docker</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-3"></i>Kubernetes</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-3"></i>CI/CD Pipeline</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-3"></i>Cloud UE</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-indigo-600 to-purple-600">
+        <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl lg:text-5xl font-black text-white mb-6">
+                ¿Listo para transformar tu clínica dental?
+            </h2>
+            <p class="text-xl text-white/90 mb-8 leading-relaxed">
+                Únete a las clínicas que ya están ofreciendo una experiencia dental excepcional con OMI.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="bg-white text-indigo-600 px-8 py-4 rounded-xl font-bold text-lg hover:shadow-2xl transition-all transform hover:scale-105">
+                    <i class="fas fa-rocket mr-2"></i>Comenzar Ahora
+                </button>
+                <button class="border-2 border-white text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white hover:text-indigo-600 transition-all">
+                    <i class="fas fa-calendar mr-2"></i>Solicitar Demo
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="col-span-2">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-xl flex items-center justify-center">
+                            <span class="text-white text-2xl">🦷</span>
+                        </div>
+                        <span class="text-2xl font-bold text-white">OMI</span>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed">
+                        Sistema de Gestión de Salud Infantil que transforma la experiencia dental mediante tecnología innovadora.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-4">Producto</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#producto" class="hover:text-white transition-colors">Características</a></li>
+                        <li><a href="#beneficios" class="hover:text-white transition-colors">Beneficios</a></li>
+                        <li><a href="#caracteristicas" class="hover:text-white transition-colors">Tecnología</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-4">Contacto</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-envelope mr-2"></i>info@omi-dental.com</li>
+                        <li><i class="fas fa-phone mr-2"></i>+34 900 123 456</li>
+                        <li><i class="fas fa-map-marker-alt mr-2"></i>España</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p class="text-gray-400">
+                    © 2024 OMI - Sistema de Gestión de Salud Infantil. Todos los derechos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+        // Add smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add intersection observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.card-hover').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+
+    <style>
+        .animate-fade-in {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</body>
+</html>
