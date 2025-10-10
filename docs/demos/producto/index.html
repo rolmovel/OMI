@@ -13,7 +13,7 @@
         }
 
         .hero-gradient {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #a7f3d0 0%, #bfdbfe 100%);
         }
 
         .card-hover {
@@ -25,8 +25,8 @@
         }
 
         .icon-wrapper {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+            background: linear-gradient(135deg, #a7f3d0 0%, #bfdbfe 100%);
+            box-shadow: 0 10px 25px rgba(167, 243, 208, 0.4);
         }
 
         .floating-animation {
@@ -39,7 +39,7 @@
         }
 
         .gradient-text {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #a7f3d0 0%, #bfdbfe 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -51,13 +51,12 @@
         }
     </style>
 </head>
-<body class="bg-gray-50">
     <!-- Navigation -->
     <nav class="bg-white shadow-lg sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center space-x-4">
-                    <div class="w-10 h-10 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-xl flex items-center justify-center">
+                    <div class="w-10 h-10 bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-xl flex items-center justify-center">
                         <span class="text-white text-xl">🦷</span>
                     </div>
                     <span class="text-xl font-bold gradient-text">OMI</span>
@@ -66,8 +65,7 @@
                     <a href="#producto" class="text-gray-700 hover:text-indigo-600 transition-colors">Producto</a>
                     <a href="#beneficios" class="text-gray-700 hover:text-indigo-600 transition-colors">Beneficios</a>
                     <a href="#caracteristicas" class="text-gray-700 hover:text-indigo-600 transition-colors">Características</a>
-                    <a href="#tecnologia" class="text-gray-700 hover:text-indigo-600 transition-colors">Tecnología</a>
-                    <a href="../index.html" class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-4 py-2 rounded-lg hover:shadow-lg transition-all">
+                    <a href="../index.html" class="bg-gradient-to-r from-emerald-400 to-cyan-400 text-white px-4 py-2 rounded-lg hover:shadow-lg transition-all">
                         ← Volver
                     </a>
                 </div>
@@ -78,8 +76,8 @@
     <!-- Hero Section -->
     <section class="hero-gradient min-h-screen flex items-center relative overflow-hidden">
         <div class="absolute inset-0">
-            <div class="absolute top-20 left-10 w-72 h-72 bg-white/10 rounded-full blur-3xl floating-animation"></div>
-            <div class="absolute bottom-20 right-10 w-96 h-96 bg-purple-300/20 rounded-full blur-3xl floating-animation" style="animation-delay: -2s;"></div>
+            <div class="absolute top-20 left-10 w-72 h-72 bg-emerald-200/30 rounded-full blur-3xl floating-animation"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-cyan-200/30 rounded-full blur-3xl floating-animation" style="animation-delay: -2s;"></div>
         </div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
@@ -96,10 +94,10 @@
                     </div>
 
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <button class="bg-white text-indigo-600 px-8 py-4 rounded-xl font-bold text-lg hover:shadow-2xl transition-all transform hover:scale-105">
+                        <button class="bg-white text-emerald-600 px-8 py-4 rounded-xl font-bold text-lg hover:shadow-2xl transition-all transform hover:scale-105">
                             <i class="fas fa-play mr-2"></i>Ver Demo
                         </button>
-                        <button class="border-2 border-white text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white hover:text-indigo-600 transition-all">
+                        <button class="border-2 border-white text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white hover:text-emerald-600 transition-all">
                             <i class="fas fa-download mr-2"></i>Descargar Brochure
                         </button>
                     </div>
@@ -374,60 +372,8 @@
         </div>
     </section>
 
-    <!-- Technology Section -->
-    <section id="tecnologia" class="py-20 bg-gradient-to-br from-gray-900 to-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl lg:text-5xl font-black text-white mb-6">
-                    Stack <span class="gradient-text">Tecnológico</span>
-                </h2>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white/20">
-                    <div class="icon-wrapper w-14 h-14 rounded-2xl flex items-center justify-center mb-6 text-white">
-                        <i class="fas fa-desktop text-xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-6">Frontend</h3>
-                    <ul class="space-y-3 text-gray-300">
-                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-3"></i>React + TypeScript</li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-3"></i>Tailwind CSS</li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-3"></i>Tauri (Desktop)</li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-3"></i>PWA Technology</li>
-                    </ul>
-                </div>
-
-                <div class="bg-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white/20">
-                    <div class="icon-wrapper w-14 h-14 rounded-2xl flex items-center justify-center mb-6 text-white">
-                        <i class="fas fa-server text-xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-6">Backend</h3>
-                    <ul class="space-y-3 text-gray-300">
-                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-3"></i>Spring Boot</li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-3"></i>PostgreSQL</li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-3"></i>Redis Cache</li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-3"></i>JWT Security</li>
-                    </ul>
-                </div>
-
-                <div class="bg-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white/20">
-                    <div class="icon-wrapper w-14 h-14 rounded-2xl flex items-center justify-center mb-6 text-white">
-                        <i class="fas fa-cloud text-xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-6">DevOps</h3>
-                    <ul class="space-y-3 text-gray-300">
-                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-3"></i>Docker</li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-3"></i>Kubernetes</li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-3"></i>CI/CD Pipeline</li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-3"></i>Cloud UE</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- CTA Section -->
-    <section class="py-20 bg-gradient-to-r from-indigo-600 to-purple-600">
+    <section class="py-20 bg-gradient-to-r from-emerald-400 to-cyan-400">
         <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
             <h2 class="text-4xl lg:text-5xl font-black text-white mb-6">
                 ¿Listo para transformar tu clínica dental?
@@ -436,10 +382,10 @@
                 Únete a las clínicas que ya están ofreciendo una experiencia dental excepcional con OMI.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <button class="bg-white text-indigo-600 px-8 py-4 rounded-xl font-bold text-lg hover:shadow-2xl transition-all transform hover:scale-105">
+                <button class="bg-white text-emerald-600 px-8 py-4 rounded-xl font-bold text-lg hover:shadow-2xl transition-all transform hover:scale-105">
                     <i class="fas fa-rocket mr-2"></i>Comenzar Ahora
                 </button>
-                <button class="border-2 border-white text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white hover:text-indigo-600 transition-all">
+                <button class="border-2 border-white text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white hover:text-emerald-600 transition-all">
                     <i class="fas fa-calendar mr-2"></i>Solicitar Demo
                 </button>
             </div>
@@ -452,13 +398,13 @@
             <div class="grid md:grid-cols-4 gap-8">
                 <div class="col-span-2">
                     <div class="flex items-center space-x-4 mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-xl flex items-center justify-center">
-                            <span class="text-white text-2xl">🦷</span>
+                        <div class="w-12 h-12 bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-xl flex items-center justify-center">
+                            <span class="text-white text-2xl">OMI</span>
                         </div>
-                        <span class="text-2xl font-bold text-white">OMI</span>
+                        <span class="text-2xl font-bold text-white">Sistema de Gestión de Salud Infantil</span>
                     </div>
                     <p class="text-gray-400 leading-relaxed">
-                        Sistema de Gestión de Salud Infantil que transforma la experiencia dental mediante tecnología innovadora.
+                        Transforma la experiencia dental mediante tecnología innovadora.
                     </p>
                 </div>
                 <div>
@@ -466,7 +412,7 @@
                     <ul class="space-y-2 text-gray-400">
                         <li><a href="#producto" class="hover:text-white transition-colors">Características</a></li>
                         <li><a href="#beneficios" class="hover:text-white transition-colors">Beneficios</a></li>
-                        <li><a href="#caracteristicas" class="hover:text-white transition-colors">Tecnología</a></li>
+                        <li><a href="#caracteristicas" class="hover:text-white transition-colors">Funcionalidades</a></li>
                     </ul>
                 </div>
                 <div>
